@@ -1,0 +1,18 @@
+<html>
+    <head>
+       
+    </head>
+    <body onload="populateData()">
+        profil
+        <a href="userProfile.html"> profil</a>
+        <div id="demo"> s</div>
+
+        <script>
+            
+            function populateData(){
+                var user = JSON.parse(window.localStorage.getItem('user'));
+             document.getElementById("demo").innerHTML = user.name;
+            }            
+           </script>
+    </body>
+</html> 

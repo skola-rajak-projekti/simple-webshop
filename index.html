@@ -1,9 +1,23 @@
 <html>
-    <head>
 
-    </head>
-    <body>
-        komit 3323
+<head>
 
-    </body>
-</html> 
+    <script>
+        const person = {
+            name: "Obaseki Nosa",
+            location: "Lagos",
+        }
+
+        function populateData(){
+            window.localStorage.setItem('user', JSON.stringify(person));
+        }
+    </script>
+</head>
+
+<body onLoad="populateData">
+    glavna stranica
+    <a href="userProfile.html"> profil</a>
+
+</body>
+
+</html>
