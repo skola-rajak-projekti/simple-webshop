@@ -1,23 +1,19 @@
 <html>
+    <head>
+        <title> Web shop </title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src="main.js"></script>
+    </head>
 
-<head>
+<body id="main" onLoad="populateData">
 
-    <script>
-        const person = {
-            name: "Obaseki Nosa",
-            location: "Lagos",
-        }
-
-        function populateData(){
-            window.localStorage.setItem('user', JSON.stringify(person));
-        }
-    </script>
-</head>
-
-<body onLoad="populateData">
-    glavna stranica
+    
+    <p id="demo"> ______- </p>
     <a href="userProfile.html"> profil</a>
 
+    <script>
+        items.forEach(printElements);
+    </script>
 </body>
 
 </html>

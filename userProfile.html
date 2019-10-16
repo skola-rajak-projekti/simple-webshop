@@ -5,13 +5,14 @@
     <body onload="populateData()">
         profil
         <a href="userProfile.html"> profil</a>
-        <div id="demo"> s</div>
+        <div id="demo"> -------- </div>
 
         <script>
             
             function populateData(){
-                var user = JSON.parse(window.localStorage.getItem('user'));
-             document.getElementById("demo").innerHTML = user.name;
+                var items = JSON.parse(window.localStorage.getItem('items'));
+                console.log(items);
+                document.getElementById("demo").innerHTML = items;
             }            
            </script>
     </body>
