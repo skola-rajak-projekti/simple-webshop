@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Futoska pijaca</title>
+    <title>Ifaktura</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -20,8 +20,7 @@
 
 <body>
     <script>
-        // setting market id into local storage 
-        window.localStorage.setItem('market-id', 1);
+
     </script>
 
     <!-- Navigation -->
@@ -55,41 +54,64 @@
 
     <!-- Page Content -->
     <div class="container">
+        <div class="row text-center">
+            <div class="col-6">
+                <img src="images/logo.jpg" alt="" class="src" height="150">
+            </div>
+            <div class="col-6 text-center">
+                <div class="card ">Broj fakture: #1221
+                    <div class="card-header"> Avgust 21 , 2019</div>
+                </div>
 
-        <!-- Jumbotron Header -->
-        <header class="jumbotron my-4">
-            <h1 class="display-3">Futoska pijaca</h1>
-            <p class="lead">Za sve zvanicne informacije o trazenoj trznoj pijaci mozete videti na njihovom glavnom
-                sajtu.</p>
-            <a href="https://nstrznica.co.rs/futoska-pijaca" class="btn btn-primary btn-lg">Poseti sajt</a>
-        </header>
 
-        <!-- Page Features -->
-        <div class="row text-center" >
-            <div class="col-lg-3">
-                <h5 class="my-4">Kategorije proizvoda</h5>
-                <div class="list-group" id="categories">
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-6"> Pera Peric <br> Naziv firme, mesto</div>
+            <div class="col-6"> Mira Miric, <br> Naziv firme, mesto</div>
+        </div>
+        <div class="row" id="ordered-items">
+            <div class="col ">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Sifra </th>
+                                <th scope="col">Naziv proizvoda</th>
+                                <th scope="col">Jedinicna cena</th>
+                                <th scope="col">Kolicina</th>
+                                <th scope="col">Ukupna cena</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                                <td>@5</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-
-            <div class="col-lg-9 col-md-6 mb-4" >
-                <div class="row" id="item-cards"></div>
-                
-            </div>
         </div>
+        <div class="row ">
+            <div class="col offset-8">
+                <table class="table">
+                        <tr> <th>Ukupno: </th> <td> 0 </td></tr>
+                        <tr> <th>PDV: </th> <td> 20%</td> </tr>
+                        
+                    </table>
+                </div>
+        </div>
+    </div>
 
-    <!-- /.row -->
 
     </div>
     <!-- /.container -->
 
-    <!-- Footer -->
-    <footer class="py-3 bg-dark fixed-bottom">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
-        </div>
-        <!-- /.container -->
-    </footer>
 
     <!-- Bootstrap core JavaScript -->
     <script src="jquery/jquery.min.js"></script>
