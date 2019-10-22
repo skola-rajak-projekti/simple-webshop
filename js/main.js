@@ -84,7 +84,27 @@ var markets = [{
     marketId: 3,
     imgPath: "images/pijace/kvantas.jpg",
     page: "kvantas.html",
-    categories: []
+    categories: [
+        {
+            name : "Mlekara",
+            items : [
+                {
+                    id: 345,
+                    name: "Koziji sir",
+                    desc: "Domaci koziji sir blah",
+                    price: 350,
+                    imgPath: "images/kozijiSir.jpg"
+                },
+                {
+                    id: 567,
+                    name:"Kravlji sir",
+                    desc: "Domaci sitan i punomasni sir od krave",
+                    price: 140,
+                    imgPath: "images/kravljiSir.jpg"
+                }
+            ]
+        }
+    ]
 },
 {
 
