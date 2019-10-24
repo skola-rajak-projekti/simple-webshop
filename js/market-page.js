@@ -4,9 +4,10 @@ var categories;
 var currentCategory;
 var cart;
 
-window.onload = function () {
-    marketId = JSON.parse(window.localStorage.getItem('market-id'));
-    market = JSON.parse(window.localStorage.getItem('market-' + marketId));
+window.addEventListener('load', populateData)
+
+function populateData(){
+    market = JSON.parse(window.localStorage.getItem('market'));
     categories = market.categories;
     categories.forEach(function (item, index) {
         printCategoryCard(item);
@@ -14,19 +15,28 @@ window.onload = function () {
 
 
 }
-function findItemById( itemId, el) {
-    if (el.id == itemId) { window.localStorage.setItem('my-kart', JSON.stringify(el));}
+function findItemById( itemId, el, amout) {
+    if (el.id == itemId) {
+        kart =  window.localStorage.getItem('my-kart');
+        kart.items.add(JSON.stringify(el));
+
+        window.localStorage.setItem('my-kart', kart);
+    }
 
 }
-function AddItemToCart(itemId) {
+function orderItem(){
+    itemId = document.getElementById("item-id").value;
+    amout = document.getElementById("item-amopunt").value;
     currentCategory.items.forEach(function (item, index) {
-        findItemById(itemId, item);
+        findItemById(itemId, item, amout);
     });
-
+    
 }
+
 
 function printItemCard(item) {
     temp = document.getElementById('item-cards');
+    //temp = "";
     temp.innerHTML += "<div class='col-lg-3 col-md-6 mb-4 '>" +
         "<div class='card h-100'> " +
         "<a href = '#' > <img class='card-img-top' height='150px' style='object-fit: cover' src=" + item.imgPath + " alt=''></a>" +
@@ -37,15 +47,16 @@ function printItemCard(item) {
         "<h5>" + item.price + " din</h5>" +
         "<p class='card-text'></p>" +
         "</div>  <div class='card-footer'><a href='javascript:void(0);' onclick='AddItemToCart(" + item.id + ")'; class='btn btn-primary'> Kupi</a>" +
+        "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal' data-item='" + item.id + "'>Poruči</button>"+
         "</div>" +
         "</div>" +
-        "</div>"
+        "</div>";
 
 }
 function findCategory(item, categoryName) {
     if (categoryName == item.name) {
         currentCategory = item;
-        console.log(item);
+        
         item.items.forEach(function (target, index) {
             printItemCard(target);
         });
