@@ -37,7 +37,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="mojaKorpa.html">Moja korpa</a>
@@ -90,19 +90,17 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="javascript:orderItem();">
-                <div class="modal-body">
-                    
+                <form action="#" onsubmit="orderItem()">
+                <div class="modal-body">                    
                         <input type="hidden" id="item-id">
                         <div class="form-group">
                             <label for="message-text" class="col-form-label"></label>
-                            <textarea class="form-control" id="message-text"></textarea>
+                            <input type="text" class="form-control" id="item-amount">
                         </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">OK</button>
-
+                    <input type="submit" class="btn btn-primary" value="Zavrsi">
                 </div>
                 </form>
             </div>
@@ -129,7 +127,7 @@
             var recipient = button.data('item');
             var modal = $(this);
             modal.find('.modal-title').text('Kolicina');
-            modal.find('.modal-body input').val(recipient);
+            modal.find('.modal-body #item-id').val(recipient);
 
         });
     </script>

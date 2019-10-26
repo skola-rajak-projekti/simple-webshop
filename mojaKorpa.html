@@ -57,25 +57,48 @@
     <div class="container">
 
         <!-- Jumbotron Header -->
-    
-            <h1 class="display-3">Vasa korpa</h1>
-            <p class="lead"></p>
-            
-        
+
+        <h1 class="display-3">Vasa korpa</h1>
+        <p class="lead"></p>
+
+
 
         <!-- Page Features -->
-        <div class="row text-center" >
-                <div class="col-lg">
-                    <h5 class="my-4">Poruceni proizvodi</h5>
-                    <div class="list-group" id="ordered-items">
+        <div class="row text-center">
+            <div class="col-lg">
+                <h5 class="my-4">Poruceni proizvodi</h5>
+                <div class="list-group" >
+                    <div class='table-responsive'>
+                        <table class='table table-striped'>
+                            <thead>
+                                <tr>
+                                    <th scope="col"> # </th>
+                                    <th scope="col"> Naziv </th>
+                                    <th scope="col"> Kolicina </th>
+                                    <th scope="col"> Jedinicna cena </th>
+                                    <th scope="col"> Iznos </th>
+                                    </tr>
+                            </thead>
+                            <tbody id="ordered-items">
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-    
-              
-                </div>
             </div>
-    
-    
+        </div>
+
+        <div class="row">
+            <div class="col offset-10">
+              
+                    <button class="btn btn-primary">Zavrsi kupovinu</button>
+
+            </div>
+        </div>
+        
+    </div>
+
+
 
     </div>
     <!-- /.container -->
