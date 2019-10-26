@@ -22,7 +22,15 @@ function printShoppingKart() {
 
     }
 }
+function saveRecipient(){
+    var user;
+    user.name = document.getElementById("recipient-name");    
+    user.adress = document.getElementById("recipient-adress");
+    
+    window.localStorage.getItem("recipient" , user);
 
+
+}
 window.onload = function () {
     shoopingList = JSON.parse(window.localStorage.getItem("my-kart"));
     printShoppingKart();
