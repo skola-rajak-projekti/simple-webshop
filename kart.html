@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Glavna</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/shop-homepage.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <script>
+        // setting market id into local storage 
+        //window.localStorage.setItem('market-id', 3);
+    </script>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">WEB shop</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mojaKorpa.html">Moja korpa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Jumbotron Header -->
+
+        <h1 class="display-3">Vasa korpa</h1>
+        <p class="lead"></p>
+
+
+
+        <!-- Page Features -->
+        <div class="row text-center">
+            <div class="col-lg">
+                <h5 class="my-4">Poruceni proizvodi</h5>
+                <div class="list-group">
+                    <div class='table-responsive'>
+                        <table class='table table-striped'>
+                            <thead>
+                                <tr>
+                                    <th scope="col"> # </th>
+                                    <th scope="col"> Naziv </th>
+                                    <th scope="col"> Kolicina </th>
+                                    <th scope="col"> Jedinicna cena </th>
+                                    <th scope="col"> Iznos </th>
+                                </tr>
+                            </thead>
+                            <tbody id="ordered-items">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col offset-10">
+
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Zavrsi
+                    kupovinu</button>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    </div>
+    <!-- /.container -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Podaci o dostavi</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form onsubmit="saveRecipient()" action="invoice.html"> 
+                <div class="modal-body">
+                 
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Ime i prezime:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Mobilni telefon:</label>
+                            <input type="text" class="form-control" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Adresa za dostavu</label>
+                            <input type="text" class="form-control" id="adress">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Jos nesto sta ja znam xD:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                   
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Odustani</button>
+                    <input type="submit" class="btn btn-primary" value="Izdaj fakturu">
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="py-3 bg-dark fixed-bottom">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Nemanja Zujic 2019</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="jquery/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/kart-page.js"></script>
+    <script>
+        $('#exampleModal').on('show.bs.modal', function (event) {
+          /*  var button = $(event.relatedTarget); 
+            var recipient = button.data('whatever');
+            
+            var modal = $(this);
+            modal.find('.modal-title').text('New message to ' + recipient);
+            modal.find('.modal-body input').val(recipient);*/
+        })</script>
+</body>
+
+</html>

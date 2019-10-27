@@ -4,9 +4,10 @@ var categories;
 var currentCategory;
 var cart;
 
-window.onload = function () {
-    marketId = JSON.parse(window.localStorage.getItem('market-id'));
-    market = JSON.parse(window.localStorage.getItem('market-' + marketId));
+window.addEventListener('load', populateData)
+
+function populateData(){
+    market = JSON.parse(window.localStorage.getItem('market'));
     categories = market.categories;
     categories.forEach(function (item, index) {
         printCategoryCard(item);
@@ -14,38 +15,50 @@ window.onload = function () {
 
 
 }
-function findItemById( itemId, el) {
-    if (el.id == itemId) { window.localStorage.setItem('my-kart', JSON.stringify(el));}
+function findItemById( itemId, el, amount) {
+    var kart;
+    if (el.id == itemId) {
+        el.amount = amount;
+        kart = JSON.parse(window.localStorage.getItem('my-kart'));
+        kart.push(el);              
+
+        window.localStorage.setItem('my-kart', JSON.stringify(kart));
+    }
 
 }
-function AddItemToCart(itemId) {
+function orderItem(){
+
+    console.log("ordere");
+    amount = document.getElementById("item-amount").value;
+    itemId = document.getElementById("item-id").value;
     currentCategory.items.forEach(function (item, index) {
-        findItemById(itemId, item);
+        findItemById(itemId, item, amount);
     });
-
+    
 }
+
 
 function printItemCard(item) {
-    temp = document.getElementById('item-cards');
+    temp = document.getElementById('item-cards');    
     temp.innerHTML += "<div class='col-lg-3 col-md-6 mb-4 '>" +
         "<div class='card h-100'> " +
-        "<a href = '#' > <img class='card-img-top' height='150px' style='object-fit: cover' src=" + item.imgPath + " alt=''></a>" +
+        "<a href = '#' > <img class='card-img-top' height='150px' style='object-fit: cover' src=" + item.imgPath[0] + " alt=''></a>" +
         "<div class='card-body'>" +
         "<h4 class='card-title'>" +
         "<a href='#' id='item-name'>" + item.name + "</a>" +
         "</h4>" +
-        "<h5>" + item.price + " din</h5>" +
+        "<h5>" + item.price + " " +item.unit + "</h5>" +
         "<p class='card-text'></p>" +
-        "</div>  <div class='card-footer'><a href='javascript:void(0);' onclick='AddItemToCart(" + item.id + ")'; class='btn btn-primary'> Kupi</a>" +
+        "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal' data-item='" + item.id + "'>Poruči</button>"+
         "</div>" +
         "</div>" +
-        "</div>"
+        "</div>";
 
 }
 function findCategory(item, categoryName) {
     if (categoryName == item.name) {
         currentCategory = item;
-        console.log(item);
+        
         item.items.forEach(function (target, index) {
             printItemCard(target);
         });

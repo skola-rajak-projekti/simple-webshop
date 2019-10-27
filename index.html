@@ -5,17 +5,26 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Shop Homepage</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
+    <title>Glavna</title>
+
+    <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
     <link href="css/shop-homepage.css" rel="stylesheet">
 
 </head>
 
 <body>
+
+
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">WEB shop</a>
+            <a class="navbar-brand" href="index.html">WEB shop</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -28,10 +37,10 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
+                        <a class="nav-link" href="kart.html">Moja korpa</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
@@ -40,21 +49,69 @@
             </div>
         </div>
     </nav>
-    <!-- PAGE CONTENT-->
-    <div class="container">
-        <div class="row justify-content-center">
-            <h1 class="display-1">Pijace Novog Sada</h1>
-        </div>
-        <div class="row mt-5"></div>
-        <div class="row d-flex justify-content-center" id="market-cards">
 
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Jumbotron Header -->
+        <header class="jumbotron my-4 ">
+            <h1 class="display-3">Dobro dosli u Zujic shop</h1>
+            <p class="lead">Modernu prodavnicu tradiocionalnih proizvoda</p>
+
+        </header>
+
+        <!-- Page Features -->
+        <div class="row text-center">
+            <div class="col-lg-3">
+                <h5 class="my-4">Kategorije proizvoda</h5>
+                <div class="list-group" id="categories">
+                </div>
+            </div>
+
+            <div class="col-lg-9 col-md-6 mb-4">
+                <div class="row" id="item-cards"></div>
+
+            </div>
+        </div>
+
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+    <!-- Modal window-->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="#" onsubmit="orderItem()">
+                <div class="modal-body">                    
+                        <input type="hidden" id="item-id">
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label"></label>
+                            <input type="text" class="form-control" id="item-amount">
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <input type="submit" class="btn btn-primary" value="Zavrsi">
+                </div>
+                </form>
+            </div>
         </div>
     </div>
-    <!-- /PAGE CONTENT-->
+    <!--/ Modal window-->
+
     <!-- Footer -->
-    <footer class="pys-3 bg-dark fixed-bottom">
+    <footer class="py-3 bg-dark fixed-bottom">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Nemanja Zurjic</p>
+            <p class="m-0 text-center text-white">Copyright &copy; Nemanja Zujic 2019</p>
         </div>
         <!-- /.container -->
     </footer>
@@ -62,9 +119,18 @@
     <!-- Bootstrap core JavaScript -->
     <script src="jquery/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <script src="js/main.js"></script>
+    <script src="js/market-page.js"></script>
+    <script>
+        $('#exampleModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var recipient = button.data('item');
+            var modal = $(this);
+            modal.find('.modal-title').text('Kolicina');
+            modal.find('.modal-body #item-id').val(recipient);
 
+        });
+    </script>
 </body>
 
 </html>
