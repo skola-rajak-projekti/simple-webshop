@@ -15,13 +15,17 @@
 
     <!-- Custom styles for this template -->
     <link href="css/shop-homepage.css" rel="stylesheet">
-
+    <style>
+        @page {
+    size: 21cm 29.7cm;
+    margin: 30mm 45mm 30mm 45mm;
+     /* change the margins as you want them to be. */
+}
+    </style>
 </head>
 
-<body>
-    <script>
-
-    </script>
+<body  style="background: gray;">
+  
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -53,55 +57,47 @@
     </nav>
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="container col-8" style="background: white;">
         <div class="row text-center">
             <div class="col-6">
-                <img src="images/logo.jpg" alt="" class="src" height="150">
+                <!--img src="images/logo.jpg" alt="" class="src" height="50"-->
             </div>
-            <div class="col-6 text-center">
-                <div class="card" id="invoice-details">
-                </div>
-
-
-            </div>
-
         </div>
+
         <div class="row">
-            <div class="col-6"> Pera Peric <br> Naziv firme, mesto</div>
-            <div class="col-6"> Mira Miric, <br> Naziv firme, mesto</div>
+            <div class="col-5 offset-1" id="company-details">
+                <!-- Details about comapny name and adress -->
+            </div>   
+            <div class="col-5 "  id="invoice-details">
+                  
+                </div>         
         </div>
+
+
         <div class="row" id="ordered-items">
-            <div class="col ">
+            <div class="col my-5">
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
                             <tr>
                                 <th scope="col">Sifra </th>
                                 <th scope="col">Naziv proizvoda</th>
-                                <th scope="col">Jedinicna cena</th>
                                 <th scope="col">Kolicina</th>
+                                <th scope="col">Jedinicna cena</th>
                                 <th scope="col">Ukupna cena</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@5</td>
-                            </tr>
+                        <tbody id="invoice-body">
+                           <!-- Invoice body that contains ordered items -->
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-        <div class="row ">
-            <div class="col offset-8">
-                <table class="table">
-                        <tr> <th>Ukupno: </th> <td> 0 </td></tr>
-                        <tr> <th>PDV: </th> <td> 20%</td> </tr>
-                        
+        <div class="row">
+            <div class="offset-8 col-4">
+                <table class="table" id="invoice-total">
+                      
                     </table>
                 </div>
         </div>
@@ -114,8 +110,8 @@
 
     <!-- Bootstrap core JavaScript -->
     <script src="jquery/jquery.min.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="js/market-page.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>    
+    <script src="js/moment.js"></script>
     <script src="js/invoice.js"></script>
 
 </body>

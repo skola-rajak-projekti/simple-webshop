@@ -4,7 +4,7 @@ var categories;
 var currentCategory;
 var cart;
 
-window.addEventListener('load', populateData)
+window.addEventListener('load', populateData);
 
 function populateData(){
     market = JSON.parse(window.localStorage.getItem('market'));
