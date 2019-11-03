@@ -24,7 +24,7 @@ function printShoppingKart() {
         kartHeader = document.getElementById('kart-header');
         kartHeader.style.display = "none";
     } else {
-        pageContent += "<div class='table-responsive '>" +
+        pageContent += "<div class='table-responsive my-3 '>" +
             "<table class='table table-striped table-bordered'>" +
             "<thead>" +
             "<tr>" +
@@ -42,11 +42,11 @@ function printShoppingKart() {
                 "</b> </td> <td class='item-blue'>" + item.name +
                 "</td> <td>" + item.amount +
                 "</td> <td>" + item.price +
-                "</td> <td>" + item.discount + "%" +
-                "</td> <td> <strong>" + item.price * item.amount * (100 - item.discount) / 100 + "din</strong>" +
+                "</td> <td>" + item.discount.name+
+                "</td> <td> <strong>" + item.price * item.amount * (1 - item.discount.value) + "din</strong>" +
                 "</td> <td>" + "<button type='button' class='btn btn-link' onclick='removeItemFromKart(" + item.id + ")'  <span class='glyphicon glyphicon-trash'> x </span></button>" +
                 "</td></tr>";
-            sum += item.price * item.amount * (100 - item.discount) / 100;
+            sum += item.price * item.amount * (1 - item.discount.value);
         });
 
 

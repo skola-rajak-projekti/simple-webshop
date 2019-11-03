@@ -22,7 +22,10 @@ var market = {
                     unit: "din/kg",
                     imgPath: ["images/Mlekara/beliMekiSir.jpg"],
                     onStock: 15,
-                    discount: 20,
+                    discount: {
+                        name: "20%",
+                        value: 0.2
+                    },
                     amount: 1,
                 },
                 {
@@ -32,7 +35,7 @@ var market = {
                     price: 740,
                     unit: "din/kg",
                     onStock: 15,
-                    discount: "",
+                    discount: { name:"", value: 0},
                     imgPath: ["images/Mlekara/gorgonzola1.jpg", "images/Mlekara/gorgonzola2.jpg", "images/Mlekara/gorgonzola3.jpg"],
                     amount: 1,
                 }
@@ -47,7 +50,7 @@ var market = {
                     price: 540,
                     unit: "din/kg",
                     onStock: 10,
-                    discount: "",
+                    discount: { name:"", value: 0},
                     imgPath: ["images/Med/livadski.jpg"],
                     amount: 1,
                 }, {
@@ -57,7 +60,7 @@ var market = {
                     price: 540,
                     unit: "din/kg",
                     onStock: 10,
-                    discount: "",
+                    discount: { name:"", value: 0},
                     imgPath: ["images/Med/lipa.jpg"],
                     amount: 1,
                 }, {
@@ -67,7 +70,10 @@ var market = {
                     price: 540,
                     unit: "din/kg",
                     onStock: 10,
-                    discount: 10,
+                    discount: {
+                        name: "10%",
+                        value: 0.1
+                    },
                     imgPath: ["images/Med/kesten.jpg"],
                     amount: 1,
                 }, {
@@ -77,7 +83,7 @@ var market = {
                     price: 540,
                     unit: "din/kg",
                     onStock: 10,
-                    discount: "",
+                    discount: { name:"", value: 0},
                     imgPath: ["images/Med/borIglice.jpg"],
                     amount: 1,
                 }, {
@@ -87,7 +93,10 @@ var market = {
                     price: 540,
                     unit: "din/kg",
                     onStock: 10,
-                    discount: 10, // in %
+                    discount: {
+                        name: "10%",
+                        value: 0.1
+                    },
                     imgPath: ["images/Med/bagrem.jpg"],
                     amount: 1,
                 },
@@ -100,7 +109,7 @@ var market = {
                     price: 540,
                     unit: "din/kg",
                     onStock: 10,
-                    discount: "",
+                    discount: { name:"", value: 0},
                     imgPath: ["images/Med/maslacak.jpg"],
                     amount: 1,
                 }
@@ -115,7 +124,7 @@ var market = {
                     price: 700,
                     unit: "din/kg",
                     onStock: 15,
-                    discount: "",
+                    discount: { name:"", value: 0},
                     imgPath: ["images/Mesara/slanina.jpg"],
                     amount: 1,
                 }, {
@@ -125,7 +134,10 @@ var market = {
                     price: 580,
                     unit: "din/kg",
                     onStock: 15,
-                    discount: 20,
+                    discount: {
+                        name: "20%",
+                        value: 0.2
+                    },
                     imgPath: ["images/Mesara/susenaGovedina.jpg"],
                     amount: 1,
                 }, {
@@ -135,7 +147,10 @@ var market = {
                     price: 450,
                     unit: "din/kg",
                     onStock: 15,
-                    discount: 30,
+                    discount: {
+                        name: "30%",
+                        value: 0.3
+                    },
                     imgPath: ["images/Mesara/prasetinaKocke.jpg"],
                     amount: 1,
 
@@ -146,7 +161,7 @@ var market = {
                     price: 250,
                     unit: "din/kg",
                     onStock: 15,
-                    discount: "",
+                    discount: { name:"", value: 0},
                     imgPath: ["images/Mesara/cevapi.jpg"],
                     amount: 1,
 
