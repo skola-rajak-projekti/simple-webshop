@@ -10,3 +10,9 @@ body {
 .item-blue {
   color : #0099ff;
 }
+.discount-head{
+  position : absolute;
+  top : 0px;
+  right : 0px;
+  background-color: yellow;
+}

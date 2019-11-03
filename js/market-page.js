@@ -39,11 +39,16 @@ function orderItem(){
 
 
 function printItemCard(item) {
+
+    // Converting int discount to right formated string
+    var discount="" 
+    if(item.discount != "")
+        discount = item.discount + "%";
     temp = document.getElementById('item-cards');    
     temp.innerHTML += "<div class='col-lg-3 col-md-6 mb-4 '>" +
         "<div class='card h-100'> " +
         "<a href = '#' > <img class='card-img-top' height='150px' style='object-fit: cover' src=" + item.imgPath[0] + " alt=''></a>" +
-        "<div class='card-body'>" +
+        "<div class='discount-head' > " + discount + "</div><div class='card-body'>" +
         "<h4 class='card-title'>" +
         "<a href='#' id='item-name'>" + item.name + "</a>" +
         "</h4>" +

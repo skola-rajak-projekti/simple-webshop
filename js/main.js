@@ -22,9 +22,7 @@ var market = {
                     unit: "din/kg",
                     imgPath: ["images/Mlekara/beliMekiSir.jpg"],
                     onStock: 15,
-                    discounts: [
-
-                    ],
+                    discount: 20,
                     amount: 1,
                 },
                 {
@@ -34,9 +32,7 @@ var market = {
                     price: 740,
                     unit: "din/kg",
                     onStock: 15,
-                    discounts: [
-
-                    ],
+                    discount: "",
                     imgPath: ["images/Mlekara/gorgonzola1.jpg", "images/Mlekara/gorgonzola2.jpg", "images/Mlekara/gorgonzola3.jpg"],
                     amount: 1,
                 }
@@ -51,9 +47,7 @@ var market = {
                     price: 540,
                     unit: "din/kg",
                     onStock: 10,
-                    discounts: [
-
-                    ],
+                    discount: "",
                     imgPath: ["images/Med/livadski.jpg"],
                     amount: 1,
                 }, {
@@ -63,9 +57,7 @@ var market = {
                     price: 540,
                     unit: "din/kg",
                     onStock: 10,
-                    discounts: [
-
-                    ],
+                    discount: "",
                     imgPath: ["images/Med/lipa.jpg"],
                     amount: 1,
                 }, {
@@ -75,9 +67,7 @@ var market = {
                     price: 540,
                     unit: "din/kg",
                     onStock: 10,
-                    discounts: [
-
-                    ],
+                    discount: 10,
                     imgPath: ["images/Med/kesten.jpg"],
                     amount: 1,
                 }, {
@@ -87,9 +77,7 @@ var market = {
                     price: 540,
                     unit: "din/kg",
                     onStock: 10,
-                    discounts: [
-
-                    ],
+                    discount: "",
                     imgPath: ["images/Med/borIglice.jpg"],
                     amount: 1,
                 }, {
@@ -99,9 +87,7 @@ var market = {
                     price: 540,
                     unit: "din/kg",
                     onStock: 10,
-                    discounts: [
-
-                    ],
+                    discount: 10, // in %
                     imgPath: ["images/Med/bagrem.jpg"],
                     amount: 1,
                 },
@@ -114,9 +100,7 @@ var market = {
                     price: 540,
                     unit: "din/kg",
                     onStock: 10,
-                    discounts: [
-
-                    ],
+                    discount: "",
                     imgPath: ["images/Med/maslacak.jpg"],
                     amount: 1,
                 }
@@ -131,9 +115,7 @@ var market = {
                     price: 700,
                     unit: "din/kg",
                     onStock: 15,
-                    discounts: [
-
-                    ],
+                    discount: "",
                     imgPath: ["images/Mesara/slanina.jpg"],
                     amount: 1,
                 }, {
@@ -143,9 +125,7 @@ var market = {
                     price: 580,
                     unit: "din/kg",
                     onStock: 15,
-                    discounts: [
-
-                    ],
+                    discount: 20,
                     imgPath: ["images/Mesara/susenaGovedina.jpg"],
                     amount: 1,
                 }, {
@@ -155,9 +135,7 @@ var market = {
                     price: 450,
                     unit: "din/kg",
                     onStock: 15,
-                    discounts: [
-
-                    ],
+                    discount: 30,
                     imgPath: ["images/Mesara/prasetinaKocke.jpg"],
                     amount: 1,
 
@@ -168,9 +146,7 @@ var market = {
                     price: 250,
                     unit: "din/kg",
                     onStock: 15,
-                    discounts: [
-
-                    ],
+                    discount: "",
                     imgPath: ["images/Mesara/cevapi.jpg"],
                     amount: 1,
 
