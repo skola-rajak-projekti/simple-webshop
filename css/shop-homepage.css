@@ -16,3 +16,39 @@ body {
   right : 0px;
   background-color: yellow;
 }
+
+.carousel-control-next-icon {
+  background-image : url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='%23fff0000' viewBox='0 0 8 8'><path d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/></svg>");
+  color:black;
+  
+}
+.carousel-control-prev-icon { 
+  background-image : url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff0000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+  color:black;
+}
+img {
+    object-fit : scale-down;
+}
+.tab { text-indent:20px }
+
+.carousel-indicators li {
+  display: inline-block;
+  width: 20px;
+  height: 20px;  
+  margin: 18px;
+  margin-top: 35px;
+  border: none;
+  text-indent: 0;
+  cursor: pointer;
+  
+  border-radius: 50%;
+  background-color: gray;
+  box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.5);    
+}
+.carousel-indicators .active {
+  width: 20px;
+  height: 20px;
+  margin: 18px;
+  margin-top: 35px;
+  background-color: #ffff99;
+}

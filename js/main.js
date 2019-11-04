@@ -17,7 +17,7 @@ var market = {
                 {
                     id: 345,
                     name: "Koziji sir",
-                    desc: "Domaći koziji sir blah",
+                    desc: "Domaći koziji sir.",
                     price: 350,
                     unit: "din/kg",
                     imgPath: ["images/Mlekara/beliMekiSir.jpg"],
@@ -46,7 +46,7 @@ var market = {
                 {
                     id: 367,
                     name: "Livadski med",
-                    desc: "Livadski med",
+                    desc: "Livadski med sa ispaša donje Srbije. ",
                     price: 540,
                     unit: "din/kg",
                     onStock: 10,
@@ -56,8 +56,8 @@ var market = {
                 }, {
                     id: 368,
                     name: "Med od lipe",
-                    desc: "Med od lipe",
-                    price: 540,
+                    desc: "Jedna od najčešcih medova i koji treba biti zastupljen u svakom domaćinstvu.",
+                    price: 640,
                     unit: "din/kg",
                     onStock: 10,
                     discount: { name:"", value: 0},
@@ -66,8 +66,8 @@ var market = {
                 }, {
                     id: 369,
                     name: "Med od kestena",
-                    desc: "Med od borovih iglica",
-                    price: 540,
+                    desc: "Med od kestena sa planine i vrcan na starinski način. U pitanju je proslogodišnja berba.",
+                    price: 780,
                     unit: "din/kg",
                     onStock: 10,
                     discount: {
@@ -79,8 +79,8 @@ var market = {
                 }, {
                     id: 370,
                     name: "Med od borovih iglica",
-                    desc: "Med od borovih iglica",
-                    price: 540,
+                    desc: "Med crvenkaste boje prijatnog ukusa i mirisa. Dostava na kućnu adresu i po dogovoru.",
+                    price: 900,
                     unit: "din/kg",
                     onStock: 10,
                     discount: { name:"", value: 0},
@@ -89,8 +89,8 @@ var market = {
                 }, {
                     id: 371,
                     name: "Med od bagrema",
-                    desc: "Med od bagrema",
-                    price: 540,
+                    desc: "Prirodni proizvod koji pčele poriyvode od nektara bagremovog cveta. Blagog ukusa i nežnog mirisa.",
+                    price: 740,
                     unit: "din/kg",
                     onStock: 10,
                     discount: {
@@ -103,9 +103,9 @@ var market = {
 
 
                 {
-                    id: 367,
+                    id: 372,
                     name: "Med od maslacka",
-                    desc: "Med od borovih iglica",
+                    desc: "Nije u pitanju još jedan pčelinji proizvod. Ovde se zapravo radi o produktu čiji je glavni sastojak ova poznata biljka, koja je jedan od vesnika proleća i buđenja prirode. Veoma je koristan za detoksikaciju organizma, ali i kao lek protiv respiratornih infekcija, za jačanje imuniteta",
                     price: 540,
                     unit: "din/kg",
                     onStock: 10,
@@ -120,7 +120,7 @@ var market = {
                 {
                     id: 205,
                     name: "Dimljena slanina",
-                    desc: "Opis",
+                    desc: "Nema štetne sastojke jer se pre sušenja izvesno vreme ostavlja da odstoji samo u soli ili salamuri, pa nije nezdrava",
                     price: 700,
                     unit: "din/kg",
                     onStock: 15,
@@ -130,7 +130,7 @@ var market = {
                 }, {
                     id: 209,
                     name: "Sušena govedina",
-                    dec: "Ops",
+                    desc: "Sušena u periodu između 4-5 nedelja. Domaćinski kvalitet.",
                     price: 580,
                     unit: "din/kg",
                     onStock: 15,
@@ -143,7 +143,7 @@ var market = {
                 }, {
                     id: 309,
                     name: "Svinjske kocke",
-                    dec: " s",
+                    desc: "Hladno predjelo od svinje.",
                     price: 450,
                     unit: "din/kg",
                     onStock: 15,
@@ -157,7 +157,7 @@ var market = {
                 }, {
                     id: 319,
                     name: "Svinjski ćevapi",
-                    dec: " s",
+                    desc: "Dobri stari tradicionalni ćevapi. Srpska kuhinja prosto ne može da se zamisli bez njih. Njihov ukus mami sve obožavatelje roštilja.",
                     price: 250,
                     unit: "din/kg",
                     onStock: 15,
@@ -167,6 +167,22 @@ var market = {
 
                 }
 
+            ]
+        },{
+            name: "Stolarija",
+            items:[
+                {
+                    id: 425,
+                    name: "Drveni prozori",
+                    desc: "Drvo kao prirodni materijal ima prednost nad PVC-om ponajviše zbog ekološkog faktora. Česta je kombinacija drveta s unutrašnje strane prozorskog okvira, dok se spoljna izrađuje od aluminijuma. Mogućnost izrade prozora po meri.",
+                    price: 450,
+                    unit: "din/m^2",
+                    onStock: 2,
+                    discount: {name:"", value:0},
+                    imgPath: ["images/Stolarija/prozori1.jpg","images/Stolarija/prozori2.jpg","images/Stolarija/prozori3.jpg","images/Stolarija/prozori4.jpg"],
+                    amount: 1,
+
+                }
             ]
         }
     ]

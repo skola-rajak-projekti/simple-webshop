@@ -59,28 +59,33 @@ function printDiscountPicker(){
     temp.innerHTML += "<a href='#' onClick='printDiscountItems()' id='30%' class='list-group-item'> 30% </a>";
 
 }
-function findItemById( itemId, el, amount) {
-    var kart;
-    if (el.id == itemId) {
-        el.amount = amount;
-        kart = JSON.parse(window.localStorage.getItem('my-kart'));
-        kart.push(el);              
+// For passes ID, function returns item object
+function findItemById(itemId) {
 
-        window.localStorage.setItem('my-kart', JSON.stringify(kart));
-    }
+    var ret;
+    market.categories.forEach(function (item, index) {
+        item.items.forEach(function(el, index){            
+            if (el.id == itemId)                          
+               ret = el;                                   
+        });
+    });
+    return ret;
 
 }
 function orderItem(){
 
-    $('#exampleModal').modal('hide')
+    $('#orderAmountModal').modal('hide')
     amount = document.getElementById("item-amount").value;
     itemId = document.getElementById("item-id").value;
-    market.categories.forEach(function (item, index) {
-        item.items.forEach(function(el, index){
-            findItemById(itemId, el, amount);
-        });
-        
-    });
+    kart = JSON.parse(window.localStorage.getItem('my-kart'));           
+  
+    
+    if(findItemById(itemId) != null)
+    {   el = findItemById(itemId)
+        el.amount = amount;
+        kart.push(el);     
+    }
+    window.localStorage.setItem('my-kart', JSON.stringify(kart));
     
 }
 
@@ -90,14 +95,15 @@ function printItemCard(item) {
     temp = document.getElementById('item-cards');    
     temp.innerHTML += "<div class='col-lg-3 col-md-6 mb-4 '>" +
         "<div class='card h-100'> " +
-        "<a href = '#' > <img class='card-img-top' height='150px' style='object-fit: cover' src=" + item.imgPath[0] + " alt=''></a>" +
+        "<a href = '#' data-toggle='modal' data-item-id='"+item.id + "' data-target='#itemDetailsModal' > <img class='card-img-top' height='150px' src=" + item.imgPath[0] + " alt=''></a>" +
         "<div class='discount-head' > " + item.discount.name + "</div><div class='card-body'>" +
         "<h4 class='card-title'>" +
-        "<a href='#' id='item-name'>" + item.name + "</a>" +
+        "<a href='#'  data-toggle='modal' data-item-id='"+item.id + "' data-target='#itemDetailsModal' id='item-name'>" + item.name + "</a>" +
+        
         "</h4>" +
         "<h5>" + item.price + " " + item.unit + "</h5>" +
         "<p class='card-text'></p>" +
-        "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal' data-item='" + item.id + "'>Poruči</button>"+
+        "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#orderAmountModal' data-item='" + item.id + "'>Poruči</button>"+
         "</div>" +
         "</div>" +
         "</div>";
