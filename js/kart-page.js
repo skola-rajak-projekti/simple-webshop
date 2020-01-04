@@ -17,13 +17,13 @@ function removeItemFromKart(itemId) {
 
 function printShoppingKart() {
     root = document.getElementById('table-ordered-items');
+    kartHeader = document.getElementById('kart-header');
     pageContent = ""
 
-    if (shoopingList.length == 0) {
+    if (shoopingList == null || shoopingList.length == 0) {
         root.innerHTML += "<img src='images/praznaKorpa.jpg'> ";
-        kartHeader = document.getElementById('kart-header');
-        kartHeader.style.display = "none";
     } else {
+        kartHeader.style.display = null;
         pageContent += "<div class='table-responsive my-3 '>" +
             "<table class='table table-striped table-bordered'>" +
             "<thead>" +
@@ -60,12 +60,27 @@ function printShoppingKart() {
     }
 }
 function saveRecipient() {
-    var user;
-    user.name = document.getElementById("recipient-name");
-    user.adress = document.getElementById("recipient-adress");
+    var user = {};
+    var order = {};    
+    user.name = document.getElementById("recipient-name").value;
+    user.adress = document.getElementById("recipient-adress").value;    
 
-    window.localStorage.getItem("recipient", user);
+    order.items = JSON.parse(window.localStorage.getItem("my-kart"));
+    order.orderer = user;    
+    window.localStorage.setItem("recipient", JSON.stringify(user));
+    
+    // Adding new order to list of all other orders.    
+    orders = JSON.parse(window.localStorage.getItem("my-orders"));     
+    if(orders == null)
+        orders = [order];
+    else
+        orders.push(order);
 
+    window.localStorage.setItem("my-orders", JSON.stringify(orders));
+    // and clearing the kart.
+    window.localStorage.removeItem("my-kart");
+    window.location.href  = "orders.html";
+    
 
 }
 window.onload = function () {

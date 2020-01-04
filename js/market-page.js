@@ -90,9 +90,15 @@ function orderItem(){
 }
 
 
-function printItemCard(item) {
+function printItemCard(item) {   
+    
+    if(item.onStock > 0)
+        orderButton = "<button   type='button' data-toggle='modal' data-target='#orderAmountModal' data-item='" + item.id + "' class='btn btn-primary'>Poruči</button>";
+    else
+        orderButton = "<button disabled data-toggle='tooltip' title='Nema na lageru'type='button'  data-toggle='modal' data-target='#orderAmountModal' data-item='" + item.id + "' class='btn btn-secondary'>Poruči</button>";
 
     temp = document.getElementById('item-cards');    
+
     temp.innerHTML += "<div class='col-lg-3 col-md-6 mb-4 '>" +
         "<div class='card h-100'> " +
         "<a href = '#' data-toggle='modal' data-item-id='"+item.id + "' data-target='#itemDetailsModal' > <img class='card-img-top' height='150px' src=" + item.imgPath[0] + " alt=''></a>" +
@@ -102,9 +108,7 @@ function printItemCard(item) {
         
         "</h4>" +
         "<h5>" + item.price + " " + item.unit + "</h5>" +
-        "<p class='card-text'></p>" +
-        "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#orderAmountModal' data-item='" + item.id + "'>Poruči</button>"+
-        "</div>" +
+        "<p class='card-text'></p>" + orderButton + "</div>" +
         "</div>" +
         "</div>";
 

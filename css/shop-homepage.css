@@ -52,3 +52,7 @@ img {
   margin-top: 35px;
   background-color: #ffff99;
 }
+
+ol.carousel-indicators  {
+  bottom: -30px;
+}

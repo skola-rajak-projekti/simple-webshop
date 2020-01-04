@@ -15,7 +15,9 @@ function getDeadlineDate() {
 function makeInvoice() {
 
     shoopingList = JSON.parse(window.localStorage.getItem("my-kart"));
+    user = JSON.parse(window.localStorage.getItem('recipient'));
     invoiceBody = document.getElementById('invoice-body');
+    
     shoopingList.forEach(function (item, index) {
         invoiceBody.innerHTML += "<tr>  <td> <b>" + item.id +
             "</b> </td> <td class='item-blue'>" + item.name +

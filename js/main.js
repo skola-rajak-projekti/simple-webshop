@@ -69,7 +69,7 @@ var market = {
                     desc: "Med od kestena sa planine i vrcan na starinski način. U pitanju je proslogodišnja berba.",
                     price: 780,
                     unit: "din/kg",
-                    onStock: 10,
+                    onStock: 0,
                     discount: {
                         name: "10%",
                         value: 0.1
@@ -92,7 +92,7 @@ var market = {
                     desc: "Prirodni proizvod koji pčele poriyvode od nektara bagremovog cveta. Blagog ukusa i nežnog mirisa.",
                     price: 740,
                     unit: "din/kg",
-                    onStock: 10,
+                    onStock: 0,
                     discount: {
                         name: "10%",
                         value: 0.1
@@ -146,7 +146,7 @@ var market = {
                     desc: "Hladno predjelo od svinje.",
                     price: 450,
                     unit: "din/kg",
-                    onStock: 15,
+                    onStock: 0,
                     discount: {
                         name: "30%",
                         value: 0.3
@@ -188,10 +188,11 @@ var market = {
     ]
 };
 
-
 // items
 window.onload = function () {
-    this.console.log("data loaded");
+    var sayHi = greeting => console.log(greeting);
+    sayHi('Hello!');
+    // hello();
     window.localStorage.setItem('market', JSON.stringify(market));
     if (window.localStorage.getItem('my-kart') === null)
         window.localStorage.setItem('my-kart', JSON.stringify([]));

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,8 +7,9 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="description" content="Diplomski rad - Web prodavnica">
+    <meta name="author" content="Nemanja Zujic">
 
     <title>Glavna</title>
 
@@ -37,10 +40,10 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="orders.html">Porudzbine</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="kart.html">Moja korpa</a>
+                        <a class="nav-link" href="kart.html">Korpa</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
@@ -148,9 +151,10 @@
                         </div>
                         <div class="col-6">
                             <h2  id="product-name"></h2>
-                            <p class="tab" id="product-detail"></p>
-                            <p>Cena proizvoda : <b id="product-price"></b>
-                            </p>Da li ima na lageru : <b id="stock"></b></p>
+                            <p id="product-detail"></p>
+
+                            <p class="tab">Cena proizvoda : <b id="product-price"></b></p>
+                            <p class="tab">Da li ima na lageru : <b id="stock"></b></p>
                             </div>
                     </div>
                 </div>
@@ -185,7 +189,7 @@
             var item = findItemById(id);
 
             var modal = $(this);
-            modal.find('.modal-title').text(" Detalji artikla");
+            modal.find('.modal-title').text("Detalji artikla");
   
             var i;
             var imageBlock = "<div class='carousel-item active '><img class='d-block w-100'  src='" + item.imgPath[0] + "' height='250px'></div>";
@@ -193,7 +197,7 @@
             if (item.imgPath.length > 1) {
                 for (i = 1; i < item.imgPath.length ;i++) {
                     indicator += "<li data-target='#itemDetailsModal' data-slide-to='" + i +"' ></li>";
-                    imageBlock += "<div class='carousel-item '>"+
+                    imageBlock += "<div class='carousel-item '>" +
                                   "<img class='d-block w-100 ' style='object-fit:scale-down' src='" + item.imgPath[i] + "' height='250px'></div>";
                 }
             }            
@@ -202,10 +206,11 @@
             modal.find('#product-name').text(item.name);
             modal.find('#product-detail').text(item.desc);
             modal.find('#product-price').text(item.price + item.unit);
-            if(item.stock > 0)
-                modal.find('#stock').text(" Da");
+
+            if(item.onStock > 0)
+                modal.find('#stock').text("Da");
             else
-                modal.find('#stock').text(" Ne");
+                modal.find('#stock').text("Ne");
         })
     </script>
 </body>
