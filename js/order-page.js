@@ -3,12 +3,11 @@ window.addEventListener('load', showOrders);
 
 function showOrders(){
 
-
+  orders = JSON.parse(localStorage.getItem('my-orders'));
     if(orders == null){
         noOrders = document.getElementById("no-orders-message");
         noOrders.innerHTML = "<h4 class='text-center'> Niste jos nista do sad porucivali </h4>";
-    }else{    
-        orders = JSON.parse(window.localStorage.getItem("my-orders"));
+    }else{         
         el = document.getElementById("order-list");             
         for( i = 0 ; i < orders.length ; i++)
         {
