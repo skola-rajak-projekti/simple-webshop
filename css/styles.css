@@ -1,6 +1,9 @@
-body {
-    background-color: blue;
+
+.action-img {
+    height: 300px;
+    object-fit : scale-down;
 }
-#main{
-    background-color: red;
+
+.payment-cards{
+    height: 50px;
 }

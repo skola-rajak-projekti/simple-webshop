@@ -168,22 +168,6 @@ var market = {
                 }
 
             ]
-        },{
-            name: "Stolarija",
-            items:[
-                {
-                    id: 425,
-                    name: "Drveni prozori",
-                    desc: "Drvo kao prirodni materijal ima prednost nad PVC-om ponajviše zbog ekološkog faktora. Česta je kombinacija drveta s unutrašnje strane prozorskog okvira, dok se spoljna izrađuje od aluminijuma. Mogućnost izrade prozora po meri.",
-                    price: 450,
-                    unit: "din/m^2",
-                    onStock: 2,
-                    discount: {name:"", value:0},
-                    imgPath: ["images/Stolarija/prozori1.jpg","images/Stolarija/prozori2.jpg","images/Stolarija/prozori3.jpg","images/Stolarija/prozori4.jpg"],
-                    amount: 1,
-
-                }
-            ]
         }
     ]
 };

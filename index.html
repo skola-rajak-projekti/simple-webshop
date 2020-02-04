@@ -1,52 +1,68 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
-    <meta name="description" content="Diplomski rad - Web prodavnica">
-    <meta name="author" content="Nemanja Zujic">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+  <meta name="description" content="Diplomski rad - Web prodavnica">
+  <meta name="author" content="Nemanja Zujic">
 
-    <title>Glavna</title>
+  <title>Glavna</title>
+  <script
+    src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+  <link rel="stylesheet" href="js/leaflet/leaflet.css" />
+  <script src="js/leaflet/leaflet.js"></script>
 
-    <!-- Bootstrap core CSS -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="css/shop-homepage.css" rel="stylesheet">
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template -->
+  <link href="css/shop-homepage.css" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
-  
-    <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-  
-    <!-- Theme CSS - Includes Bootstrap -->
-    <link href="css/creative.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic'
+    rel='stylesheet' type='text/css'>
+
+  <!-- Plugin CSS -->
+  <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+  <!-- Theme CSS - Includes Bootstrap -->
+  <link href="css/creative.min.css" rel="stylesheet">
+
+  <link href="css/styles.css" rel="stylesheet">
 
 </head>
 
 <body>
-    
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto my-2 my-lg-0">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Кућа
+              <span class="sr-only">(current)</span>
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+            <a class="nav-link" href="orders.html">Поруџбенице</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+            <a class="nav-link" href="kart.html">Корпа</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            <a class="nav-link" href="about.html">Детаљи</a>
           </li>
         </ul>
       </div>
@@ -58,97 +74,153 @@
     <div class="container h-100">
       <div class="row h-100 align-items-center justify-content-center text-center">
         <div class="col-lg-10 align-self-end">
-          <h1 class="text-uppercase text-white font-weight-bold">Your Favorite Source of Free Bootstrap Themes</h1>
+          <h1 class="text-uppercase text-white font-weight-bold">Упознајте српску традицију на најбољи начин</h1>
           <hr class="divider my-4">
         </div>
         <div class="col-lg-8 align-self-baseline">
-          <p class="text-white-75 font-weight-light mb-5">Start Bootstrap can help you build better websites using the Bootstrap framework! Just download a theme and start customizing, no strings attached!</p>
-          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+          <p class="text-white-75 font-weight-light mb-5">Окусите најпознатије специјалитете балканског региона - од
+            аперитива до дезерта - свега има на нашем столу! </p>
+          <a class="btn btn-primary btn-xl js-scroll-trigger" href="catalog.html">Погледај целу понуду</a>
         </div>
       </div>
     </div>
   </header>
 
-  
+
   <!-- Services Section -->
   <section class="page-section" id="services">
     <div class="container">
-      <h2 class="text-center mt-0">At Your Service</h2>
+      <h2 class="text-center mt-0">Чега све има у понуди?</h2>
       <hr class="divider my-4">
       <div class="row">
-        <div class="col-lg-3 col-md-6 text-center">
+        <div class="col-lg-3 col-md-6 text-center ">
           <div class="mt-5">
             <i class="fas fa-4x fa-gem text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Sturdy Themes</h3>
-            <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
+            <h3 class="h4 mb-2">Аперитив</h3>
+            <p class="text-muted mb-0">Стари српски обичај је да се пре свега наздрави једна са врата. Ту традицију само
+              задржали и ми!</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
             <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Up to Date</h3>
-            <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
+            <h3 class="h4 mb-2">Мезе</h3>
+            <p class="text-muted mb-0">Најфинији производи сухомеснате и млечне индустрије испред вас.</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
             <i class="fas fa-4x fa-globe text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Ready to Publish</h3>
-            <p class="text-muted mb-0">You can use this design as is, or you can make changes!</p>
+            <h3 class="h4 mb-2">Главна јела</h3>
+            <p class="text-muted mb-0">Да се нико није макао док сарму није такао! </p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
             <i class="fas fa-4x fa-heart text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Made with Love</h3>
-            <p class="text-muted mb-0">Is it really open source if it's not made with love?</p>
+            <h3 class="h4 mb-2">Дезерти</h3>
+            <p class="text-muted mb-0">Зар је потребан опис?</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-    <!-- Contact Section -->
-    <section class="page-section" id="contact">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-              <h2 class="mt-0">Let's Get In Touch!</h2>
-              <hr class="divider my-4">
-              <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
-              <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-              <div>+1 (202) 555-0149</div>
-            </div>
-            <div class="col-lg-4 mr-auto text-center">
-              <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
-              <!-- Make sure to change the email address in anchor text AND the link below! -->
-              <a class="d-block" href="mailto:contact@yourwebsite.com">contact@yourwebsite.com</a>
-            </div>
-          </div>
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <div class="container-fluid p-0">
+      <h2 class="text-center mt-0">Актуелне акције</h2>
+      <hr class="divider">
+      <div class="row no-gutters offset-2">
+        <div class="col-lg-4 mx-5 offset-1">
+          <img class="img-fluid action-img  my-4" src="img/portfolio/thumbnails/dostava.jpg" alt="">
         </div>
-      </section>
-    
-      <!-- Footer -->
-      <footer class="bg-light py-5">
-        <div class="container">
-          <div class="small text-center text-muted">Copyright &copy; 2019 - Start Bootstrap</div>
+        <div class="col-lg-4 ">
+          <img class="img-fluid  action-img my-4" src="img/portfolio/thumbnails/domacinska.jpg" alt="">
         </div>
-      </footer>
-    
-      <!-- Bootstrap core JavaScript -->
-      <script src="jquery/jquery.min.js"></script>
-      <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-    
-      <!-- Plugin JavaScript -->
-      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-      <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-    
-      <!-- Custom scripts for this template -->
-      <script src="js/creative.min.js"></script>
+        <div class="col-lg-4 mx-5 offset-1">
+          <img class="img-fluid  action-img my-4" src="img/portfolio/thumbnails/privezak.jpg" alt="">
+        </div>
+        <div class="col-lg-4 ">
+          <img class="img-fluid  action-img my-4" src="img/portfolio/thumbnails/popust-med.jpg" alt="">
+        </div>
+
+        <div class="col-lg-10 ">
+          <img class="img-fluid action-img my-4" width="90%" src="img/portfolio/thumbnails/vikendica.jpg" alt="">
+        </div>
+
+      </div>
+  </section>
+
+  <!-- Contact Section  and map section-->
+  <section class="page-section" id="contact">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="mt-0">Занима вас нешто чега нема у понуди?</h2>
+          <hr class="divider my-4">
+          <p class="text-muted mb-5">Једин позивом или финим писмом испуњавамо и музичке жеље, ваше је само да наручите
+            и да уживате. Радујемо се вашим сугестијама. Можете нас контактирати преко: </p>
+        </div>
+      </div>
+      <div class="row">
+
+        <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
+          <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
+          <div>Телефон: +(381) 555-0149</div>
+        </div>
+        <div class="col-lg-4 mr-auto text-center">
+
+          <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+          <!-- Make sure to change the email address in anchor text AND the link below! -->
+          <a class="d-block" href="mailto:contact@yourwebsite.com">Електронском поштом contact@zujic.com</a>
+        </div>
+        <div id="mapid" class="row justify-content-center" style="height: 280px; width: 1200px;"></div>
+        <script>
+          var mymap = L.map('mapid').setView([45.26107, 19.82878], 17);
+          L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFqYXNhdmljIiwiYSI6ImNrNjE1anB2ajAyNWwzb3J4M2oyM20xeWIifQ.asSWLKzuC7q0yg7klEQ1lw', {
+            maxZoom: 19,
+            id: 'mapbox/streets-v11',
+            accessToken: 'your.mapbox.access.token'
+          }).addTo(mymap);
+          var marker = L.marker([45.26107, 19.82878]).addTo(mymap);
+
+        </script>
+
+      </div>
+
+      <div class="row">
+        <div class="col  text-center">
+        <img src="images/kartice/sve.png" class="payment-cards">
+      </div>
+        <p>
+          Uslovi korišćenja | Politika privatnosti | © 2008 - 2019 WinWin Shop d.o.o. Sva prava zadržana.
+Cene na sajtu su iskazane u dinarima sa uračunatim porezom, a plaćanje se vrši isključivo u dinarima.
+Nastojimo da budemo što precizniji u opisu proizvoda, prikazu slika i samih cena, ali ne možemo garantovati da su sve informacije kompletne i bez grešaka.
+Svi artikli prikazani na sajtu su deo naše ponude i ne podrazumeva da su dostupni u svakom trenutku. Raspoloživost robe možete proveriti pozivanjem
+Call Centra na 0700 330 330 (po ceni lokalnog poziva)
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-light py-5">
+    <div class="container">
+      <div class="small text-center text-muted">Copyright &copy; 2019 - Zujic webshop</div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="jquery/jquery.min.js"></script>
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/creative.min.js"></script>
 
 </body>
 
