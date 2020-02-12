@@ -1,33 +1,32 @@
-var categoryType = "";
-var currentCategory ;
+var currentCategory = {};
 
 window.addEventListener('load', redirectionPage);
 function redirectionPage(){
     
-    categoryType = parseRequest();
-    getCategoryFromMarket(categoryType);
-    
-    console.log("Entered category " +currentCategory.name);
+    currentCategory.urlName = parseRequest();
+    getCategoryFromMarket(currentCategory.urlName);
 
     document.getElementById("page-header").innerHTML = currentCategory.name;
     document.getElementById("page-details").innerHTML = currentCategory.details;
 
 
-    printItemsFromCategory(categoryType);
+    printItemsFromCategory(currentCategory.urlName);
 }
 
 function parseRequest(){
-    len = window.location.href.length;
-    link = window.location.href.substr(72, len); // med/mlekara/mesara
-    
-    return link.charAt(0).toUpperCase() + link.substr(1,link.length);
+    path = window.location.href.split("=")[1];
+    if(path != null || path != "" ){
+        return path;
+    }else{
+        return "nekategorizovano"
+    }
     
 }
 function getCategoryFromMarket(categoryName){
     market = JSON.parse(window.localStorage.getItem('market'));
     market.categories.forEach(function (item, index) {
         
-        if (categoryName === item.name) {
+        if (categoryName === item.urlName.toLowerCase()) {
             currentCategory = item;
         }  
     });
@@ -35,7 +34,7 @@ function getCategoryFromMarket(categoryName){
 
 function findCategory(item, categoryName) {
     
-    if (categoryName == item.name) {
+    if (categoryName == item.urlName) {
         currentCategory = item;
         item.items.forEach(function (target, index) {
             printItemCard(target);

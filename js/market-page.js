@@ -14,8 +14,6 @@ function populateData() {
 
     market.categories.forEach(function (item, index) {
 
-
-        //temp.innerHTML += "<a href='#' onClick='printItemsFromCategory()' id='" + item.name + "' class='list-group-item'>" + item.name + "</a>";
         printCategory(item);
 
     });
@@ -23,15 +21,12 @@ function populateData() {
 
     printBestBuyitems();
 
-    printDiscountPicker();
-
-    //  printAllItems();
 
 }
 function printCategory(category) {
     temp = document.getElementById('categories');
     temp.innerHTML += "<h2> " + category.name +" </h2>";
-    temp.innerHTML += "<a href= 'category.html?type=" + category.name.toLowerCase()  +"'><img height='300px'  src='" + category.images[0] + "'></a>";
+    temp.innerHTML += "<a href= 'category.html?type=" + category.urlName  +"'><img height='300px'  src='" + category.images[0] + "'></a>";
 }
 function printBestBuyitems() {
 
@@ -62,7 +57,7 @@ function printBestbuyItem(item) {
     "</div>";
 }
 
-// prints all items that have current discount
+/* prints all items that have current discount
 function printDiscountItems() {
 
     var sbar = document.getElementById("sbar");
@@ -106,3 +101,4 @@ function printDiscountPicker() {
     temp.innerHTML += "<a href='#' onClick='printDiscountItems()' id='30%' class='list-group-item'> 30% </a>";
 
 }
+*/

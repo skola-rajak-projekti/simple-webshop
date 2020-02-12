@@ -1,18 +1,8 @@
 
 var market = {
-    name: "Zujic shop",
-    about: "Prodavnica za prodaju tradiocionalnih proizvoda.",
-    location: {
-        street: "Venizelisova 123",
-        city: "Novi Sad",
-        zip: 21000,
-    },
-    phoneNumber: "021-568-266",
-    site: "www.zujic.com",
-    email: "zujic@shop.rs",
     bestBuy: [
         {
-            id: 205,
+            id: 7205,
             name: "Димљена сланина",
             desc: "Nema štetne sastojke jer se pre sušenja izvesno vreme ostavlja da odstoji samo u soli ili salamuri, pa nije nezdrava",
             price: 700,
@@ -24,7 +14,7 @@ var market = {
         },
         {
 
-            id: 207,
+            id: 7207,
             name: "Cvarci",
             desc: "Nema štetne sastojke jer se pre sušenja izvesno vreme ostavlja da odstoji samo u soli ili salamuri, pa nije nezdrava",
             price: 340,
@@ -35,7 +25,7 @@ var market = {
             amount: 1,
         },
         {
-            id: 345,
+            id: 7345,
             name: "Koziji sir",
             desc: "Domaći koziji sir.",
             price: 350,
@@ -49,7 +39,7 @@ var market = {
             amount: 1,
         },
         {
-            id: 367,
+            id: 7367,
             name: "Livadski med",
             desc: "Livadski med sa ispaša donje Srbije. ",
             price: 740,
@@ -64,9 +54,10 @@ var market = {
     ],
     categories: [
         {
-            name: "Mlekara",
+            name: "Млекара",
+            urlName: "mlekara",
             images: ["images/Mlekara/fotka-kategorije.jpg"],
-            details:"",
+            details: "Конзумирање млечних производа на много начина доприноси здрављу - а најважније је да људи, који током живота уносе много млечних производа, манје пате од смањења коштане масе и густине костију, а самим тиме и од остеропотозе и других болести коштаног система." ,
             items: [
                 {
                     id: 345,
@@ -95,7 +86,8 @@ var market = {
                 }
             ]
         }, {
-            name: "Med",
+            name: "Мед",
+            urlName: "med",
             details : "Pod medom se podrazumeva gusta, slatka, sirupasta ili kristalasta materija, bledožute do tamnomrke boje, specifičnog mirisa i ukusa, proizvod pčela medarica (Apis mellifica L. i Apis dorsata Fabricius). Med potiče od nektara i eksudacionih proizvoda bilja, koje pčele sakupljaju, prerađuju i unose u saće.Naziv med može da nosi samo čist proizvod pčela. Međutim, proizvod dobiven u periodu prihranjivanja šećerom ili slatkim supstancama, osim meda, prema propisima mora nositi oznaku „šećerni med“. Isto tako pod nazivom MED ne mogu se stavljati u promet ni karamelisani proizvodi slični medu, niti med koji sadrži više od 22% vode, kao i med koji sadrži više od 5% saharoze (rapin ili trščani šećer).",
             images: ["images/Med/fotka-kategorije.jpg"],
             items: [
@@ -171,7 +163,8 @@ var market = {
                 }
             ]
         }, {
-            name: "Mesara",
+            name: "Месара",
+            urlName: "mesara",
             images: ["images/Mesara/fotka-kategorije.jpg"],
             details:"",
             items: [{
