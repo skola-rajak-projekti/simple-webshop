@@ -4,6 +4,16 @@
     object-fit : scale-down;
 }
 
+.old-price {
+    text-decoration: line-through;
+}
+.right {
+    text-align: right;
+}
+.cover {
+    
+    object-fit : cover;/*scale-down;*/
+}
 .payment-cards{
     height: 50px;
 }

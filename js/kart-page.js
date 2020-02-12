@@ -29,12 +29,12 @@ function printShoppingKart() {
             "<thead>" +
             "<tr>" +
             "<th scope='col'> # </th>" +
-            "<th scope='col'> Naziv </th>" +
-            "<th scope='col'> Kolicina </th>" +
-            "<th scope='col'> Jedinicna cena </th>" +
-            "<th scope='col'> Popust </th>" +
-            "<th scope='col'> Iznos </th>" +
-            "<th scope='col'> Obrisi </th>" +
+            "<th scope='col'> Назив </th>" +
+            "<th scope='col'> Количина </th>" +
+            "<th scope='col'> Јединична цена </th>" +
+            "<th scope='col'> Попуст </th>" +
+            "<th scope='col'> Износ </th>" +
+            "<th scope='col'> Обриши </th>" +
             "</tr>" +
             "</thead><tbody>";
         shoopingList.forEach(function (item, index) {
@@ -43,7 +43,7 @@ function printShoppingKart() {
                 "</td> <td>" + item.amount +
                 "</td> <td>" + item.price +
                 "</td> <td>" + item.discount.name+
-                "</td> <td> <strong>" + item.price * item.amount * (1 - item.discount.value) + "din</strong>" +
+                "</td> <td> <strong>" + item.price * item.amount * (1 - item.discount.value) + "дин</strong>" +
                 "</td> <td>" + "<button type='button' class='btn btn-link' onclick='removeItemFromKart(" + item.id + ")'  <span class='glyphicon glyphicon-trash'> x </span></button>" +
                 "</td></tr>";
             sum += item.price * item.amount * (1 - item.discount.value);
@@ -51,10 +51,11 @@ function printShoppingKart() {
 
 
         pageContent += "<tr colspan='40'><div class='offset-9'><table class='table  table-bordered'>" +
-            "<tr><td><h5> Ukupuni iznos: " + sum + " din</h5></td></tr></table></div>";
+            "<tr><td><h5> Укупни износ: " + sum + " din</h5></td></tr></table></div>";
         pageContent += "</tr></tbody> </table> </div></td></tr>";
         root.innerHTML = pageContent;
 
+        window.localStorage.setItem("kart-total", JSON.stringify(sum));
 
 
     }
@@ -62,12 +63,32 @@ function printShoppingKart() {
 function saveRecipient() {
     var user = {};
     var order = {};    
-    user.name = document.getElementById("recipient-name").value;
-    user.adress = document.getElementById("recipient-adress").value;    
+    user.firstname = document.getElementById("firstName").value;
+    user.lastname = document.getElementById("lastName").value;
+    user.adress = document.getElementById("street").value;    
+    user.email  = document.getElementById("email").value;    
+    user.state  = document.getElementById("state").value;    
+    user.city  = document.getElementById("city").value;    
+    user.zip  = document.getElementById("zip").value;    
+    if(document.getElementById("card").value == "none")
+        user.paymentmethod = "По узећу";
+
+    else{
+        user.paymentmethod = "Картицом";  
+        user.card = {};
+        user.card.name  = document.getElementById("cardName").value;    
+        user.card.no  = document.getElementById("cardNo").value;  
+        user.card.exp = document.getElementById("cardExp").value;    
+        user.card.cvv = document.getElementById("CCV").value;    
+    }
 
     order.items = JSON.parse(window.localStorage.getItem("my-kart"));
-    order.orderer = user;    
-    window.localStorage.setItem("recipient", JSON.stringify(user));
+    
+    order.orderer = user;   
+    order.total = JSON.parse(window.localStorage.getItem("kart-total"));
+    window.localStorage.setItem('kart-total', 0);
+
+    //window.localStorage.setItem("recipient", JSON.stringify(user));
     
     // Adding new order to list of all other orders.    
     orders = JSON.parse(window.localStorage.getItem("my-orders"));     
@@ -77,10 +98,11 @@ function saveRecipient() {
         orders.push(order);
 
     window.localStorage.setItem("my-orders", JSON.stringify(orders));
-    // and clearing the kart.
+    
     window.localStorage.removeItem("my-kart");
     window.location.href  = "orders.html";
     
+   
 
 }
 window.onload = function () {

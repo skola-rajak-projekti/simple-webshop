@@ -5,130 +5,104 @@ var cart;
 
 window.addEventListener('load', populateData);
 
-function populateData(){
-    market = JSON.parse(window.localStorage.getItem('market'));    
-    
+function populateData() {
+    market = JSON.parse(window.localStorage.getItem('market'));
+    // kart size indicator
+    kartlen = JSON.parse(window.localStorage.getItem('my-kart')).length;
+    if (kartlen > 0)
+        document.getElementById('kartfull').innerHTML = kartlen;
+
     market.categories.forEach(function (item, index) {
 
-        temp = document.getElementById('categories');
-        temp.innerHTML += "<a href='#' onClick='printItemsFromCategory()' id='" + item.name + "' class='list-group-item'>" + item.name + "</a>";
-    
+
+        //temp.innerHTML += "<a href='#' onClick='printItemsFromCategory()' id='" + item.name + "' class='list-group-item'>" + item.name + "</a>";
+        printCategory(item);
+
     });
-    
+
+
+    printBestBuyitems();
+
     printDiscountPicker();
 
-    printAllItems();
-    
+    //  printAllItems();
+
+}
+function printCategory(category) {
+    temp = document.getElementById('categories');
+    temp.innerHTML += "<h2> " + category.name +" </h2>";
+    temp.innerHTML += "<a href= 'category.html?type=" + category.name.toLowerCase()  +"'><img height='300px'  src='" + category.images[0] + "'></a>";
+}
+function printBestBuyitems() {
+
+    temp = document.getElementById('bestbuy');
+    temp.innerHTML = "";
+
+    market.bestBuy.forEach(function (item, index) {
+        printBestbuyItem(item);
+
+    });
+}
+function printBestbuyItem(item) {
+
+    temp = document.getElementById('bestbuy');
+
+    temp.innerHTML += "<div class='col-lg-3 col-md-6 mb-4 col-centered '>" +
+        "<div class='card bg-light mb-3 h-100'> " +
+        "<div class='card-header'>" +
+        "<a href='#' data-toggle='modal' data-item-id='" + item.id + "' data-target='#itemDetailsModal' id='item-name'>" + item.name + "</a>" +
+        "</div>" +
+        "<div class='card-body'>" +
+        "<a href = '#' data-toggle='modal' data-item-id='" + item.id + "' data-target='#itemDetailsModal' > <img class='card-img-top cover ' height='220px' src=" + item.imgPath[0] + " alt=''></a>" +
+        "<div class='discount-head-big' > <h2>" + item.discount.name + "</h2></div></div>" +
+        "<p class='right old-price px-4 '> " + item.price + " " + item.unit + "</p>" +
+        "<h4 class='right text-success px-3'>  Нова цена  " + parseFloat(item.price * (1 - item.discount.value)).toFixed(2) + " </h4>" +
+        //"<button class='btn btn-primary' onclick=orderItem()> Додај у корпу </button>" +
+        "<button type='button' data-toggle='modal' data-target='#orderAmountModal' data-item='" + item.id + "' class='btn btn-primary'>Додај у корпу </button>"
+    "</div>";
 }
 
 // prints all items that have current discount
-function printDiscountItems()
-{
+function printDiscountItems() {
+
+    var sbar = document.getElementById("sbar");
+    var bestbuy = document.getElementById("bestbuy-head");
+    var item = document.getElementById("items-head");
+    item.classList.remove("hidden");
+    sbar.className = "col-lg-3";
+    bestbuy.classList.add("hidden");
+
+
     temp = document.getElementById('item-cards');
     temp.innerHTML = "";
 
     discount = event.srcElement.id;
-    market.categories.forEach(function(item, index)
-    {      
-        item.items.forEach(function(el, index){
-           
-           if(el.discount.name === discount)
-            {
-                printItemCard(el);          
-                
+    market.categories.forEach(function (item, index) {
+        item.items.forEach(function (el, index) {
+
+            if (el.discount.name === discount) {
+                printItemCard(el);
+
             }
         });
-        
+
     });
 }
-function printAllItems(){
-    market.categories.forEach(function(item, index)
-    {      
-        item.items.forEach(function(el, index){           
-                printItemCard(el);                       
+function printAllItems() {
+    
+    market.categories.map(item => {
+        item.items.map(el => {
+            printItemCard(el);
         });
-        
+
     });
 }
 
-function printDiscountPicker(){
-    
+function printDiscountPicker() {
+
     var temp = document.getElementById('discounts');
     temp.innerHTML += "<a href='#' onClick='printDiscountItems()' id='10%' class='list-group-item'> 10% </a>";
     temp.innerHTML += "<a href='#' onClick='printDiscountItems()' id='20%' class='list-group-item'> 20% </a>";
     temp.innerHTML += "<a href='#' onClick='printDiscountItems()' id='30%' class='list-group-item'> 30% </a>";
 
 }
-// For passes ID, function returns item object
-function findItemById(itemId) {
-
-    var ret;
-    market.categories.forEach(function (item, index) {
-        item.items.forEach(function(el, index){            
-            if (el.id == itemId)                          
-               ret = el;                                   
-        });
-    });
-    return ret;
-
-}
-function orderItem(){
-
-    $('#orderAmountModal').modal('hide')
-    amount = document.getElementById("item-amount").value;
-    itemId = document.getElementById("item-id").value;
-    kart = JSON.parse(window.localStorage.getItem('my-kart'));           
-  
-    
-    if(findItemById(itemId) != null)
-    {   el = findItemById(itemId)
-        el.amount = amount;
-        kart.push(el);     
-    }
-    window.localStorage.setItem('my-kart', JSON.stringify(kart));
-    
-}
-
-
-function printItemCard(item) {   
-    
-    if(item.onStock > 0)
-        orderButton = "<button   type='button' data-toggle='modal' data-target='#orderAmountModal' data-item='" + item.id + "' class='btn btn-primary'>Poruči</button>";
-    else
-        orderButton = "<button disabled data-toggle='tooltip' title='Nema na lageru'type='button'  data-toggle='modal' data-target='#orderAmountModal' data-item='" + item.id + "' class='btn btn-secondary'>Poruči</button>";
-
-    temp = document.getElementById('item-cards');    
-
-    temp.innerHTML += "<div class='col-lg-3 col-md-6 mb-4 '>" +
-        "<div class='card h-100'> " +
-        "<a href = '#' data-toggle='modal' data-item-id='"+item.id + "' data-target='#itemDetailsModal' > <img class='card-img-top' height='150px' src=" + item.imgPath[0] + " alt=''></a>" +
-        "<div class='discount-head' > " + item.discount.name + "</div><div class='card-body'>" +
-        "<h4 class='card-title'>" +
-        "<a href='#'  data-toggle='modal' data-item-id='"+item.id + "' data-target='#itemDetailsModal' id='item-name'>" + item.name + "</a>" +
-        
-        "</h4>" +
-        "<h5>" + item.price + " " + item.unit + "</h5>" +
-        "<p class='card-text'></p>" + orderButton + "</div>" +
-        "</div>" +
-        "</div>";
-
-}
-function findCategory(item, categoryName) {
-    if (categoryName == item.name) {
-        currentCategory = item;
-        
-        item.items.forEach(function (target, index) {
-            printItemCard(target);
-        });
-    }
-}
-function printItemsFromCategory() {
-    categoryName = event.srcElement.id;
-    temp = document.getElementById('item-cards');
-    temp.innerHTML = "";
-    market.categories.forEach(function (item, index) {
-        findCategory(item, categoryName);
-    });
-}
-
-

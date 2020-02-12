@@ -11,18 +11,29 @@ function showOrders(){
         el = document.getElementById("order-list");             
         for( i = 0 ; i < orders.length ; i++)
         {
-          pageContent ="<tr class='header' > <td colspan='10'> Porudzbina br: " + (i+1) + " </td> </tr>";
+          pageContent ="<tr class='header' > <td colspan='10'> Porudzbina # " + (i+1) + " </td> </tr>";
+          pageContent +="<tr > <th> Naziv proizvoda </th> "+
+                          "<th> Kolicina [kg] </th>"+
+                          "<th> Cena [din] </th>"+
+                          "<th> Ukupno [din] </th>"+
+                          "</tr>";
+          
+
           for(j = 0; j < orders[i].items.length; j++){
             item = orders[i].items[j];
                 pageContent += 
                     "<tr><td class='item-blue'>" + item.name +
-                    "</td> <td>" + item.amount +
-                    "</td> <td>" + item.price +             
-                    "</td> <td> <strong>" + item.price * item.amount * (1 - item.discount.value) + "din</strong>" +                
+                    "</td> <td>" + parseFloat(item.amount).toFixed(2) +
+                    "</td> <td>" + parseFloat(item.price).toFixed(2) +             
+                    "</td> <td> " + parseFloat(item.price * item.amount * (1 - item.discount.value)).toFixed(2) + " " +                
                     "</td></tr>";
+                  
                   }
-              el.innerHTML += pageContent;
-        }
+                  pageContent += "<tr><td colspan='3'> Dostava  </td><th > 220.00 </th></tr>";
+                  pageContent += "<tr><td  colspan='3'>Placeno: " + orders[i].orderer.paymentmethod + " </td><td colspan='2'> "+ parseFloat(orders[i].total).toFixed(2)+" </td></tr>";
+                  el.innerHTML += pageContent;
+            }
+        
     }
 
     

@@ -2,17 +2,13 @@
 <html lang="en">
 
 <head>
-
-
     <title>Glavna</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/shop-homepage.css" rel="stylesheet">
-
-    
+    <link href="css/shop-homepage.css" rel="stylesheet">   
 
 
 </head>
@@ -23,7 +19,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">WEB shop</a>
+            <a class="navbar-brand" href="index.html">ВЕБ шоп</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -31,18 +27,18 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home
+                        <a class="nav-link" href="index.html">Главна
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="orders.html">Porudzbine</a>
+                        <a class="nav-link" href="orders.html">Поруџбине</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="kart.html">Korpa</a>
-                    </li>
+                        <a class="nav-link active" href="kart.html">Корпа</a>
+                  </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">Contact</a>
+                        <a class="nav-link" href="about.html">О нама</a>
                     </li>
                 </ul>
             </div>
@@ -54,7 +50,7 @@
 
         <!-- Jumbotron Header -->
 
-        <h1 class="text-center display-3" >Poručeni proizvodi</h1>
+        <h1 class="text-center display-3 my-5" >Поручени производи</h1>
         <p class="lead" style="height: 50px"> </p>
 
 
@@ -89,27 +85,23 @@
                 <div class="modal-header">
                     
                     <h4 class="mb-3 modal-title">Подаци за доставу</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    
                 </div>
                 <form onsubmit="saveRecipient()" >
                     <div class="modal-body">
 
                         <div class="col order-md-1">
-                            
-                            <form class="needs-validation" novalidate="">
                               <div class="row">
                                 <div class="col-md-6 mb-3">
                                   <label for="firstName">Име</label>
-                                  <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                                  <input type="text" class="form-control" id="firstName" name="name" required>
                                   <div class="invalid-feedback">
                                     Унето име није исправно.
                                   </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                   <label for="lastName">Презиме</label>
-                                  <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                                  <input type="text" class="form-control" id="lastName" name="surname" required>
                                   <div class="invalid-feedback">
                                     Презиме није исправно.
                                   </div>
@@ -117,8 +109,8 @@
                               </div>
 
                               <div class="mb-3">
-                                <label for="email">Емаил <span class="text-muted">(Optional)</span></label>
-                                <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                                <label for="email">Емаил <span class="text-muted">(Neobavezno)</span></label>
+                                <input type="email" class="form-control" id="email" placeholder="tvoj@mejl.com" name="email">
                                 <div class="invalid-feedback">
                                   Молим вас унесите исправну емаил адресу
                                 </div>
@@ -126,7 +118,7 @@
                     
                               <div class="mb-3">
                                 <label for="address">Улица и број</label>
-                                <input type="text" class="form-control" id="address" placeholder="Радничка 52, стан 2" required="">
+                                <input type="text" class="form-control" id="street" placeholder="Радничка 52, стан 2" name="street required">
                                 <div class="invalid-feedback">
                                   
                                 </div>
@@ -135,47 +127,37 @@
                               <div class="row">
                                 <div class="col-md-5 mb-3">
                                   <label for="country">Држава</label>
-                                  <input type="text" class="form-control" id="стате" placeholder="Србија" required="">
+                                  <input type="text" class="form-control" id="state" placeholder="Србија" name="state">
                                   <div class="invalid-feedback">
                                     Please select a valid country.
                                   </div>
                                 </div>
                                 <div class="col-md-4 mb-3">
                                   <label for="state">Град</label>
-                                  <input type="text" class="form-control" id="address" placeholder="Нови Сад" required="">
+                                  <input type="text" class="form-control" id="city" placeholder="Нови Сад" name="city">
                                   <div class="invalid-feedback">
                                     Please provide a valid state.
                                   </div>
                                 </div>
                                 <div class="col-md-3 mb-3">
                                   <label for="zip">Zip</label>
-                                  <input type="text" class="form-control" id="zip" placeholder="" required="">
+                                  <input type="text" class="form-control" id="zip" name="zip">
                                   <div class="invalid-feedback">
                                     Zip code required.
                                   </div>
                                 </div>
-                              </div>
-                              <hr class="mb-4">
-                              <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="same-address">
-                                <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
-                              </div>
-                              <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="save-info">
-                                <label class="custom-control-label" for="save-info">Save this information for next time</label>
-                              </div>
-                              <hr class="mb-4">
+                              </div>                            
                     
                               <h4 class="mb-3">Метод плаћања</h4>
                     
                               <div class="d-block my-3">
                                 <div class="custom-control custom-radio">
-                                  <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" onclick="hideCard()" checked="" required="">
-                                  <label class="custom-control-label" for="credit">По узећем</label>
+                                  <input id="direct" name="paymentMethod" type="radio" class="custom-control-input" value="direct" onclick="hideCard()" checked="" required="">
+                                  <label class="custom-control-label" for="direct">По узећем</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                  <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" onclick="showCard()" required="" >
-                                  <label class="custom-control-label" for="debit">Кредитним картицама</label>
+                                  <input id="card" name="paymentMethod" type="radio" class="custom-control-input" value="none" onclick="showCard()" required="" >
+                                  <label class="custom-control-label" for="card">Кредитним картицама</label>
                                 </div>
                              
                                 
@@ -183,48 +165,49 @@
                               <div id="paymentOption" style="display: none;">
                               <div class="row"  >
                                 <div class="col-md-6 mb-3">
-                                  <label for="cc-name">Name on card</label>
-                                  <input type="text" class="form-control" id="cc-name" placeholder="" required="">
-                                  <small class="text-muted">Full name as displayed on card</small>
+                                  <label for="cc-name">Име на картици</label>
+                                  <input type="text" class="form-control" id="cardName" name="cardName">
+                                  <small class="text-muted">Уписати и име и презиме</small>
                                   <div class="invalid-feedback">
-                                    Name on card is required
+                                    Име је обавезно поље
                                   </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                  <label for="cc-number">Credit card number</label>
-                                  <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                                  <label for="cc-number">Број кредитне картице</label>
+                                  <input type="text" class="form-control" id="cardNo" name="cardNo">
                                   <div class="invalid-feedback">
-                                    Credit card number is required
+                                    број кредитне карице је обавезан
                                   </div>
                                 </div>
                               </div>
                               <div class="row">
                                 <div class="col-md-3 mb-3">
-                                  <label for="cc-expiration">Expiration</label>
-                                  <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+                                  <label for="cc-expiration">Датум истека</label>
+                                  <input type="text" class="form-control" id="cardExp" name="cardExp">
                                   <div class="invalid-feedback">
-                                    Expiration date required
+                                    Датум је обавезан
                                   </div>
                                 </div>
                                 <div class="col-md-3 mb-3">
-                                  <label for="cc-expiration">CVV</label>
-                                  <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+                                  <label for="cc-expiration">ЦВВ</label>
+                                  <input type="text" class="form-control" id="CCV"  name="cardCCV">
                                   <div class="invalid-feedback">
-                                    Security code required
+                                    Безбедносни код је обавезан
                                   </div>
                                 </div>
                             </div>
                               </div>
                               <hr class="mb-4">
-                              <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
-                            </form>
+                              <input type="submit" class="btn  btn-primary btn-lg btn-block" value="Zavrsi">
+                              <button type="button" class="btn btn-secondary  btn-lg btn-block " data-dismiss="modal">Одустани</button> 
+                            
                           </div>
                         </div>
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Одустани</button>                        
-                        <input type="submit" class="btn btn-primary" value="Ok">
+                                               
+                        
                     </div>
                 </form>
             </div>
@@ -233,7 +216,7 @@
 
 
     <!-- Footer -->
-    <footer class="py-3 bg-dark fixed-bottom">
+    <footer class="py-2 bg-dark fixed-bottom">
         <div class="container">
             <p class="m-0 text-center text-white">Copyright &copy; Nemanja Zujic 2019</p>
         </div>
