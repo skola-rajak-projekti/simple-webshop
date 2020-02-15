@@ -2,244 +2,245 @@
 <html lang="en">
 
 <head>
-    <title>Glavna</title>
+  <title>Glavna</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="css/shop-homepage.css" rel="stylesheet">   
+  <!-- Custom styles for this template -->
+  <link href="css/shop-homepage.css" rel="stylesheet">
 
 
 </head>
 
 <body>
-   
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">ВЕБ шоп</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Главна
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="orders.html">Поруџбине</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="kart.html">Корпа</a>
-                  </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">О нама</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Page Content -->
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-
-        <!-- Jumbotron Header -->
-
-        <h1 class="text-center display-3 my-5" >Поручени производи</h1>
-        <p class="lead" style="height: 50px"> </p>
-
-
-        <!-- Page Features -->
-        <div class="row text-center card">
-            <div class="col-lg">
-                
-                <div class="list-group " id="table-ordered-items">
-                    <!-- Customers order -->
-                </div>
-            </div>
-     
-
-        <div class="row" id="kart-header" style="display:none">
-            <div class="col offset-10">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    Zavrsi kupovinu
-                </button>
-            </div>
-        </div>
-   </div>
+      <a class="navbar-brand" href="index.html">ВЕБ шоп</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Главна
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="orders.html">Поруџбине</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="kart.html">Корпа</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">О нама</a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    
+    <!-- Jumbotron Header -->
+
+    <h1 class="text-center display-3 my-5">Поручени производи</h1>
+    <p class="lead" style="height: 50px"> </p>
+
+    <!-- Page Features -->
+    <div class="row text-center card" id="table">
+      <div class="col-lg">
+
+        <div class="" id="table-ordered-items">
+          <!-- Customers order -->
+        </div>
+      </div>
+
+
+      <div class="row" id="kart-header" style="display:none">
+        <div class="col offset-10">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Zavrsi kupovinu
+          </button>
+        </div>
+      </div>      
+    </div>
+  </div>
 
 
 
+  </div>
+  <!-- /.container -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <h4 class="mb-3 modal-title">Подаци за доставу</h4>
+
+        </div>
+        <form onsubmit="saveRecipient()" id="form">
+          <div class="modal-body">
+
+            <div class="col order-md-1">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="firstName">Име</label>
+                  <input type="text" class="form-control" id="firstName" name="name" required>
+                  <div class="invalid-feedback">
+                    Унето име није исправно.
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="lastName">Презиме</label>
+                  <input type="text" class="form-control" id="lastName" name="surname" required>
+                  <div class="invalid-feedback">
+                    Презиме није исправно.
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="email">Емаил <span class="text-muted">(Neobavezno)</span></label>
+                <input type="email" class="form-control" id="email" placeholder="tvoj@mejl.com" name="email">
+                <div class="invalid-feedback">
+                  Молим вас унесите исправну емаил адресу
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="address">Улица и број</label>
+                <input type="text" class="form-control" id="street" placeholder="Радничка 52, стан 2"
+                  name="street required">
+                <div class="invalid-feedback">
+
+                </div>
+              </div>
+
+              <div class="row">
+
+                <div class="col-md-4 mb-3">
+                  <label for="state">Град</label>
+                  <select id="city" class="form-control" placeholder="Нови Сад" name="city" onchange="addZIPcode()">
+                    <option value="NS" selected>Нови Сад</option>
+                    <option value="BG">Београд</option>
+                    <option value="KG">Крагујевац</option>
+                    <option value="SB">Суботица</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please provide a valid state.
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="zip">Zip</label>
+                  <input type="text" class="form-control" id="zip" name="zip">
+                  <div class="invalid-feedback">
+                    Zip code required.
+                  </div>
+                </div>
+              </div>
+
+              <h4 class="mb-3">Метод плаћања</h4>
+
+              <div class="d-block my-3">
+                <div class="custom-control custom-radio">
+                  <input id="direct" name="paymentMethod" type="radio" class="custom-control-input" value="direct"
+                    onclick="hideCard()" checked="" required="">
+                  <label class="custom-control-label" for="direct">По узећем</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input id="card" name="paymentMethod" type="radio" class="custom-control-input" value="none"
+                    onclick="showCard()" required="">
+                  <label class="custom-control-label" for="card">Кредитним картицама</label>
+                </div>
+
+
+              </div>
+              <div id="paymentOption" style="display: none;">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="cc-name">Име на картици</label>
+                    <input type="text" class="form-control" id="cardName" name="cardName">
+                    <small class="text-muted">Уписати и име и презиме</small>
+                    <div class="invalid-feedback">
+                      Име је обавезно поље
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="cc-number">Број кредитне картице</label>
+                    <input type="text" class="form-control" id="cardNo" name="cardNo">
+                    <div class="invalid-feedback">
+                      број кредитне карице је обавезан
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3 mb-3">
+                    <label for="cc-expiration">Датум истека</label>
+                    <input type="text" class="form-control" id="cardExp" name="cardExp">
+                    <div class="invalid-feedback">
+                      Датум је обавезан
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-3">
+                    <label for="cc-expiration">ЦВВ</label>
+                    <input type="text" class="form-control" id="CCV" name="cardCCV">
+                    <div class="invalid-feedback">
+                      Безбедносни код је обавезан
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr class="mb-4">
+              <input type="submit" class="btn  btn-primary btn-lg btn-block"   value="Zavrsi">
+              <button type="button" class="btn btn-secondary  btn-lg btn-block " data-dismiss="modal">Одустани</button>
+
+            </div>
+          </div>
+
+      </div>
+      <div class="modal-footer">
+
+
+      </div>
+      </form>
+    </div>
+  </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="py-2 bg-dark fixed-bottom">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Nemanja Zujic 2019</p>
     </div>
     <!-- /.container -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    
-                    <h4 class="mb-3 modal-title">Подаци за доставу</h4>
-                    
-                </div>
-                <form onsubmit="saveRecipient()" >
-                    <div class="modal-body">
+  </footer>
 
-                        <div class="col order-md-1">
-                              <div class="row">
-                                <div class="col-md-6 mb-3">
-                                  <label for="firstName">Име</label>
-                                  <input type="text" class="form-control" id="firstName" name="name" required>
-                                  <div class="invalid-feedback">
-                                    Унето име није исправно.
-                                  </div>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                  <label for="lastName">Презиме</label>
-                                  <input type="text" class="form-control" id="lastName" name="surname" required>
-                                  <div class="invalid-feedback">
-                                    Презиме није исправно.
-                                  </div>
-                                </div>
-                              </div>
+  <!-- Bootstrap core JavaScript -->
+  <!-- <script src="jquery/jquery.min.js"></script> -->
+  <script src="jquery/jquery.js"></script>
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 
-                              <div class="mb-3">
-                                <label for="email">Емаил <span class="text-muted">(Neobavezno)</span></label>
-                                <input type="email" class="form-control" id="email" placeholder="tvoj@mejl.com" name="email">
-                                <div class="invalid-feedback">
-                                  Молим вас унесите исправну емаил адресу
-                                </div>
-                              </div>
-                    
-                              <div class="mb-3">
-                                <label for="address">Улица и број</label>
-                                <input type="text" class="form-control" id="street" placeholder="Радничка 52, стан 2" name="street required">
-                                <div class="invalid-feedback">
-                                  
-                                </div>
-                              </div>
-                    
-                              <div class="row">
-                                <div class="col-md-5 mb-3">
-                                  <label for="country">Држава</label>
-                                  <input type="text" class="form-control" id="state" placeholder="Србија" name="state">
-                                  <div class="invalid-feedback">
-                                    Please select a valid country.
-                                  </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                  <label for="state">Град</label>
-                                  <input type="text" class="form-control" id="city" placeholder="Нови Сад" name="city">
-                                  <div class="invalid-feedback">
-                                    Please provide a valid state.
-                                  </div>
-                                </div>
-                                <div class="col-md-3 mb-3">
-                                  <label for="zip">Zip</label>
-                                  <input type="text" class="form-control" id="zip" name="zip">
-                                  <div class="invalid-feedback">
-                                    Zip code required.
-                                  </div>
-                                </div>
-                              </div>                            
-                    
-                              <h4 class="mb-3">Метод плаћања</h4>
-                    
-                              <div class="d-block my-3">
-                                <div class="custom-control custom-radio">
-                                  <input id="direct" name="paymentMethod" type="radio" class="custom-control-input" value="direct" onclick="hideCard()" checked="" required="">
-                                  <label class="custom-control-label" for="direct">По узећем</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                  <input id="card" name="paymentMethod" type="radio" class="custom-control-input" value="none" onclick="showCard()" required="" >
-                                  <label class="custom-control-label" for="card">Кредитним картицама</label>
-                                </div>
-                             
-                                
-                              </div>
-                              <div id="paymentOption" style="display: none;">
-                              <div class="row"  >
-                                <div class="col-md-6 mb-3">
-                                  <label for="cc-name">Име на картици</label>
-                                  <input type="text" class="form-control" id="cardName" name="cardName">
-                                  <small class="text-muted">Уписати и име и презиме</small>
-                                  <div class="invalid-feedback">
-                                    Име је обавезно поље
-                                  </div>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                  <label for="cc-number">Број кредитне картице</label>
-                                  <input type="text" class="form-control" id="cardNo" name="cardNo">
-                                  <div class="invalid-feedback">
-                                    број кредитне карице је обавезан
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-md-3 mb-3">
-                                  <label for="cc-expiration">Датум истека</label>
-                                  <input type="text" class="form-control" id="cardExp" name="cardExp">
-                                  <div class="invalid-feedback">
-                                    Датум је обавезан
-                                  </div>
-                                </div>
-                                <div class="col-md-3 mb-3">
-                                  <label for="cc-expiration">ЦВВ</label>
-                                  <input type="text" class="form-control" id="CCV"  name="cardCCV">
-                                  <div class="invalid-feedback">
-                                    Безбедносни код је обавезан
-                                  </div>
-                                </div>
-                            </div>
-                              </div>
-                              <hr class="mb-4">
-                              <input type="submit" class="btn  btn-primary btn-lg btn-block" value="Zavrsi">
-                              <button type="button" class="btn btn-secondary  btn-lg btn-block " data-dismiss="modal">Одустани</button> 
-                            
-                          </div>
-                        </div>
+  <script src="js/payment-system.js"></script>
+  <script src="js/kart-page.js"></script>
+  <script>
 
-                    </div>
-                    <div class="modal-footer">
-                                               
-                        
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Footer -->
-    <footer class="py-2 bg-dark fixed-bottom">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Nemanja Zujic 2019</p>
-        </div>
-        <!-- /.container -->
-    </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="jquery/jquery.min.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-    
-    <script src="jquery/jquery.js"></script>
-    <script src="js/payment-system.js"></script>
-    <script src="js/kart-page.js"></script>
-    <script>
+    $('#exampleModal').on('show.bs.modal', function (event) {
+      /*  var button = $(event.relatedTarget); 
+        var recipient = button.data('whatever');
         
-        $('#exampleModal').on('show.bs.modal', function (event) {
-            /*  var button = $(event.relatedTarget); 
-              var recipient = button.data('whatever');
-              
-              var modal = $(this);
-              modal.find('.modal-title').text('New message to ' + recipient);
-              modal.find('.modal-body input').val(recipient);*/
-        })</script>
+        var modal = $(this);
+        modal.find('.modal-title').text('New message to ' + recipient);
+        modal.find('.modal-body input').val(recipient);*/
+    })</script>
 </body>
 
 </html>

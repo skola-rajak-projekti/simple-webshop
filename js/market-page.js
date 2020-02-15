@@ -12,6 +12,7 @@ function start() {
     cc =(JSON.parse(window.localStorage.getItem('my-kart'))).count;
     if(cc != undefined && cc > 0)        
         document.getElementById('kartfull').innerHTML = cc;       
+        
     market.categories.forEach(function (item, index) {
         printCategory(item);
     });

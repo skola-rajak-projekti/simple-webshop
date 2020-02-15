@@ -1,17 +1,33 @@
 var shoopingList;
 var sum = 0;
 
-window.onload = function () {
+
+
+function start(){
     shoopingList = JSON.parse(window.localStorage.getItem("my-kart"));
     printShoppingKart();
-
-};
+    
+    $("#form").submit(function(event){        
+         event.preventDefault()
+    });
+    
+}
+function addZIPcode(){
+    var city = document.getElementById("city").value;
+    var zip = document.getElementById("zip");
+    switch(city){
+        case "NS": zip.value = "21000"; break;
+        case "BG": zip.value = "11000"; break;
+        case "KG": zip.value = "3400";break;
+        case "SB": zip.value = "2400";break;
+    }
+}
 
 function printShoppingKart() {
     root = document.getElementById('table-ordered-items');
     kartHeader = document.getElementById('kart-header');
     pageContent = ""
-
+    
     if (shoopingList == null || shoopingList.count == 0) {
         root.innerHTML += "<img src='images/praznaKorpa.jpg'> ";
     } else {
@@ -43,7 +59,7 @@ function printShoppingKart() {
         });
 
 
-        pageContent += "<tr colspan='40'><div class='offset-9'><table class='table  table-bordered'>" +
+        pageContent += "<tr colspan='40'><div class='offset-9'><table class='table  '>" +
             "<tr><td><h5> Укупни износ: " + sum.toFixed(2) + " din</h5></td></tr></table></div>";
         pageContent += "</tr></tbody> </table> </div></td></tr>";
         root.innerHTML = pageContent;
@@ -56,13 +72,11 @@ function saveRecipient() {
     user.firstname = document.getElementById("firstName").value;
     user.lastname = document.getElementById("lastName").value;
     user.adress = document.getElementById("street").value;    
-    user.email  = document.getElementById("email").value;    
-    user.state  = document.getElementById("state").value;    
+    user.email  = document.getElementById("email").value;         
     user.city  = document.getElementById("city").value;    
     user.zip  = document.getElementById("zip").value;    
     if(document.getElementById("card").value == "none")
         user.paymentmethod = "По узећу";
-
     else{
         user.paymentmethod = "Картицом";  
         user.card = {};
@@ -72,41 +86,45 @@ function saveRecipient() {
         user.card.cvv = document.getElementById("CCV").value;    
     }
 
-    order.items = JSON.parse(window.localStorage.getItem("my-kart"));
-    
-    order.orderer = user;   
-    order.total = JSON.parse(window.localStorage.getItem("kart-total"));
-    window.localStorage.setItem('kart-total', 0);
-
-    //window.localStorage.setItem("recipient", JSON.stringify(user));
-    
-    // Adding new order to list of all other orders.    
+    order.kart = JSON.parse(window.localStorage.getItem("my-kart"));    
+    order.orderer = user;             
     orders = JSON.parse(window.localStorage.getItem("my-orders"));     
     if(orders == null)
         orders = [order];
     else
         orders.push(order);
 
-    window.localStorage.setItem("my-orders", JSON.stringify(orders));
+   // window.localStorage.setItem("my-orders", JSON.stringify(orders));
     
-    window.localStorage.removeItem("my-kart");
-    window.location.href  = "orders.html";
+    //window.localStorage.removeItem("my-kart");
+    //window.location.href  = "orders.html";
+    setTimeout(function () {
+        $('#exampleModal').modal('hide')
+    }, 100);
     
-   
+    
 
 }
+$('#exampleModal').on('hidden.bs.modal', function (e) {
+    
+    $('#table').addClass('collapse');
+  })
 
 
 function removeFilter(id){
-    return shoopingList.filter(function(el){       
+    return shoopingList.items.filter(function(el){       
         return el.id != id;
     });        
 }
 
 function removeItemFromKart(itemId) {  
   
-    var temp = removeFilter(itemId);
+    var temp = shoopingList;
+    temp.items = removeFilter(itemId);
+    temp.count--;
+
     window.localStorage.setItem("my-kart", JSON.stringify(temp));
     location.reload();
 }
 
+start();
