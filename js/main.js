@@ -1,4 +1,44 @@
 
+var actions = {
+    actions: [{
+        id: 1,
+        name: "Бесплатна достава",
+        endDate : {
+            day: 20,
+            month: 10,
+            year: 2020
+        },
+        desc: "Na teritoiji Vojvodine besplatna dostava",
+
+    },{
+        id: 2,
+        name: "Domacinska akcija",
+        desc:"Za svaku porudzbinu preko 3000din, poklon sljivovica!",
+        endDate : {
+            day: 20,
+            month: 10,
+            year: 2020
+        },
+    },{
+        id:3,
+        name: "Popust na med",
+        desc: "Popust na vecu kolicinu meda", endDate : {
+            day: 20,
+            month: 10,
+            year: 2020
+        },
+    },
+    {id:3,
+        name: "Kolenzi",
+        desc: "3+1 kulen",
+         endDate : {
+            day: 20,
+            month: 10,
+            year: 2020
+        },}
+
+]
+}
 var market = {
     bestBuy: [
         {
@@ -53,6 +93,59 @@ var market = {
 
     ],
     categories: [
+        {
+        // bestBuy
+        urlName: "bestBuy",
+        items: [
+            {
+                id: 7205,
+                name: "Димљена сланина",
+                desc: "Nema štetne sastojke jer se pre sušenja izvesno vreme ostavlja da odstoji samo u soli ili salamuri, pa nije nezdrava",
+                price: 700,
+                unit: "дин/кг",
+                onStock: 15,
+                discount: { name: "50%", value: 0.5 },
+                imgPath: ["images/Mesara/slanina.jpg"],
+                amount: 1,
+            },
+            {
+    
+                id: 7207,
+                name: "Cvarci",
+                desc: "Nema štetne sastojke jer se pre sušenja izvesno vreme ostavlja da odstoji samo u soli ili salamuri, pa nije nezdrava",
+                price: 340,
+                unit: "дин/кг",
+                onStock: 15,
+                discount: { name: "60%", value: 0.6 },
+                imgPath: ["images/Mesara/paprikacvarci.jpeg"],
+                amount: 1,
+            },
+            {
+                id: 7345,
+                name: "Koziji sir",
+                desc: "Domaći koziji sir.",
+                price: 350,
+                unit: "дин/кг",
+                imgPath: ["images/Mlekara/beliMekiSir.jpg"],
+                onStock: 15,
+                discount: {
+                    name: "40%",
+                    value: 0.4
+                },
+                amount: 1,
+            },
+            {
+                id: 7367,
+                name: "Livadski med",
+                desc: "Livadski med sa ispaša donje Srbije. ",
+                price: 740,
+                unit: "дин/кг",
+                onStock: 10,
+                discount: { name: "80%", value: 0.8},
+                imgPath: ["images/Med/livadski.jpg", "images/Med/maslacak.jpg"],
+                amount: 1,
+            }]
+        },
         {
             name: "Млекара",
             urlName: "mlekara",
@@ -245,10 +338,17 @@ var market = {
     ]
 };
 
+function populateData(){
+    if (window.localStorage.getItem('market') === null)
+        window.localStorage.setItem('market', JSON.stringify(market));
+    if (window.localStorage.getItem('actions') === null)
+        window.localStorage.setItem('actions', JSON.stringify(actions));
+    if (window.localStorage.getItem('my-kart') === null)
+        window.localStorage.setItem('my-kart', JSON.stringify({}));
+}
+
 // items
 window.onload = function () {
 
-    window.localStorage.setItem('market', JSON.stringify(market));
-    if (window.localStorage.getItem('my-kart') === null)
-        window.localStorage.setItem('my-kart', JSON.stringify([]));
+   this.populateData()
 };

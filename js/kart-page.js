@@ -1,26 +1,18 @@
 var shoopingList;
 var sum = 0;
 
-function removeFilter(id){
-    return shoopingList.filter(function(el){       
-        return el.id != id;
-    });        
-}
+window.onload = function () {
+    shoopingList = JSON.parse(window.localStorage.getItem("my-kart"));
+    printShoppingKart();
 
-function removeItemFromKart(itemId) {  
-  
-    var temp = removeFilter(itemId);
-    window.localStorage.setItem("my-kart", JSON.stringify(temp));
-    location.reload();
-}
-
+};
 
 function printShoppingKart() {
     root = document.getElementById('table-ordered-items');
     kartHeader = document.getElementById('kart-header');
     pageContent = ""
 
-    if (shoopingList == null || shoopingList.length == 0) {
+    if (shoopingList == null || shoopingList.count == 0) {
         root.innerHTML += "<img src='images/praznaKorpa.jpg'> ";
     } else {
         kartHeader.style.display = null;
@@ -37,13 +29,14 @@ function printShoppingKart() {
             "<th scope='col'> Обриши </th>" +
             "</tr>" +
             "</thead><tbody>";
-        shoopingList.forEach(function (item, index) {
+            sum = 0;
+        shoopingList.items.forEach(function (item, index) {
             pageContent += "<tr> <td> <b>" + item.id +
                 "</b> </td> <td class='item-blue'>" + item.name +
                 "</td> <td>" + item.amount +
                 "</td> <td>" + item.price +
                 "</td> <td>" + item.discount.name+
-                "</td> <td> <strong>" + item.price * item.amount * (1 - item.discount.value) + "дин</strong>" +
+                "</td> <td> <strong>" + (item.price * item.amount * (1 - item.discount.value)).toFixed(2) + "дин</strong>" +
                 "</td> <td>" + "<button type='button' class='btn btn-link' onclick='removeItemFromKart(" + item.id + ")'  <span class='glyphicon glyphicon-trash'> x </span></button>" +
                 "</td></tr>";
             sum += item.price * item.amount * (1 - item.discount.value);
@@ -51,12 +44,9 @@ function printShoppingKart() {
 
 
         pageContent += "<tr colspan='40'><div class='offset-9'><table class='table  table-bordered'>" +
-            "<tr><td><h5> Укупни износ: " + sum + " din</h5></td></tr></table></div>";
+            "<tr><td><h5> Укупни износ: " + sum.toFixed(2) + " din</h5></td></tr></table></div>";
         pageContent += "</tr></tbody> </table> </div></td></tr>";
         root.innerHTML = pageContent;
-
-        window.localStorage.setItem("kart-total", JSON.stringify(sum));
-
 
     }
 }
@@ -105,10 +95,18 @@ function saveRecipient() {
    
 
 }
-window.onload = function () {
-    shoopingList = JSON.parse(window.localStorage.getItem("my-kart"));
-    printShoppingKart();
 
 
-};
+function removeFilter(id){
+    return shoopingList.filter(function(el){       
+        return el.id != id;
+    });        
+}
+
+function removeItemFromKart(itemId) {  
+  
+    var temp = removeFilter(itemId);
+    window.localStorage.setItem("my-kart", JSON.stringify(temp));
+    location.reload();
+}
 

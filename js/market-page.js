@@ -3,19 +3,17 @@ var temp;
 var currentCategory;
 var cart;
 
-window.addEventListener('load', populateData);
+window.addEventListener('load', start);
 
-function populateData() {
-    market = JSON.parse(window.localStorage.getItem('market'));
-    // kart size indicator
-    kartlen = JSON.parse(window.localStorage.getItem('my-kart')).length;
-    if (kartlen > 0)
-        document.getElementById('kartfull').innerHTML = kartlen;
-
+function start() {
+    //method from main.js
+    populateData();
+    market = JSON.parse(window.localStorage.getItem('market'));    
+    cc =(JSON.parse(window.localStorage.getItem('my-kart'))).count;
+    if(cc != undefined && cc > 0)        
+        document.getElementById('kartfull').innerHTML = cc;       
     market.categories.forEach(function (item, index) {
-
         printCategory(item);
-
     });
 
 
@@ -24,9 +22,11 @@ function populateData() {
 
 }
 function printCategory(category) {
-    temp = document.getElementById('categories');
-    temp.innerHTML += "<h2> " + category.name +" </h2>";
-    temp.innerHTML += "<a href= 'category.html?type=" + category.urlName  +"'><img height='300px'  src='" + category.images[0] + "'></a>";
+    if(category.name != null){
+        temp = document.getElementById('categories');
+        temp.innerHTML += "<h2> " + category.name +" </h2>";
+        temp.innerHTML += "<a href= 'category.html?type=" + category.urlName  +"'><img height='300px'  src='" + category.images[0] + "'></a>";
+    }
 }
 function printBestBuyitems() {
 
