@@ -15,7 +15,15 @@ function orderItem(that) {
             kart.items = [];
             kart.count = 0;
         }else{
-            kart.total += el.price*amount;        
+            
+            kart.total += el.price * amount * (1 - el.discount.value);
+        }
+        if(kart.total > 2000)
+        {
+            kart.delivery = " Na racun kuce ";
+        }else{
+            kart.delivery = "220.00din";
+            kart.total += 220;
         }
         kart.items.push(el);
         kart.count++;

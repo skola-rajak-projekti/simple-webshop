@@ -26,7 +26,7 @@ function addZIPcode(){
 function printShoppingKart() {
     root = document.getElementById('table-ordered-items');
     kartHeader = document.getElementById('kart-header');
-    pageContent = ""
+    pageContent = "";
     
     if (shoopingList == null || shoopingList.count == 0) {
         root.innerHTML += "<img src='images/praznaKorpa.jpg'> ";
@@ -55,13 +55,13 @@ function printShoppingKart() {
                 "</td> <td> <strong>" + (item.price * item.amount * (1 - item.discount.value)).toFixed(2) + "дин</strong>" +
                 "</td> <td>" + "<button type='button' class='btn btn-link' onclick='removeItemFromKart(" + item.id + ")'  <span class='glyphicon glyphicon-trash'> x </span></button>" +
                 "</td></tr>";
-            sum += item.price * item.amount * (1 - item.discount.value);
+            //sum += item.price * item.amount * (1 - item.discount.value);
         });
-
-
-        pageContent += "<tr colspan='40'><div class='offset-9'><table class='table  '>" +
-            "<tr><td><h5> Укупни износ: " + sum.toFixed(2) + " din</h5></td></tr></table></div>";
-        pageContent += "</tr></tbody> </table> </div></td></tr>";
+        // Printing delvery price
+        pageContent += "<tr> <td colspan='5'> <strong>Dostava : </strong></td><td colspan='2'> "  + shoopingList.delivery +"</td></tr>";
+        
+        pageContent += "</td></tr></tbody> </table> </div></td></tr>";
+        pageContent += "<tr colspan='40' ><td><h5> Укупни износ: " + shoopingList.total + " din</h5>";
         root.innerHTML = pageContent;
 
     }
@@ -121,8 +121,14 @@ function removeItemFromKart(itemId) {
   
     var temp = shoopingList;
     temp.items = removeFilter(itemId);
-    temp.count--;
+    temp.total = 0;
+    temp.count  = 0;
+    shoopingList.items.forEach( function ( item, index){
+        temp.total += item.price * item.amount * (1 - item.discount.value);
+        temp.count += 1;
 
+    })
+    
     window.localStorage.setItem("my-kart", JSON.stringify(temp));
     location.reload();
 }

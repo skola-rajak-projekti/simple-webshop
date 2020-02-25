@@ -50,7 +50,7 @@ var market = {
             onStock: 15,
             discount: { name: "50%", value: 0.5 },
             imgPath: ["images/Mesara/slanina.jpg"],
-            amount: 1,
+             
         },
         {
 
@@ -62,7 +62,7 @@ var market = {
             onStock: 15,
             discount: { name: "60%", value: 0.6 },
             imgPath: ["images/Mesara/paprikacvarci.jpeg"],
-            amount: 1,
+             
         },
         {
             id: 7345,
@@ -76,7 +76,7 @@ var market = {
                 name: "40%",
                 value: 0.4
             },
-            amount: 1,
+             
         },
         {
             id: 7367,
@@ -87,7 +87,7 @@ var market = {
             onStock: 10,
             discount: { name: "80%", value: 0.8},
             imgPath: ["images/Med/livadski.jpg", "images/Med/maslacak.jpg"],
-            amount: 1,
+             
         },
 
 
@@ -106,7 +106,7 @@ var market = {
                 onStock: 15,
                 discount: { name: "50%", value: 0.5 },
                 imgPath: ["images/Mesara/slanina.jpg"],
-                amount: 1,
+                 
             },
             {
     
@@ -118,7 +118,7 @@ var market = {
                 onStock: 15,
                 discount: { name: "60%", value: 0.6 },
                 imgPath: ["images/Mesara/paprikacvarci.jpeg"],
-                amount: 1,
+                 
             },
             {
                 id: 7345,
@@ -132,7 +132,7 @@ var market = {
                     name: "40%",
                     value: 0.4
                 },
-                amount: 1,
+                 
             },
             {
                 id: 7367,
@@ -143,7 +143,7 @@ var market = {
                 onStock: 10,
                 discount: { name: "80%", value: 0.8},
                 imgPath: ["images/Med/livadski.jpg", "images/Med/maslacak.jpg"],
-                amount: 1,
+                 
             }]
         },
         {
@@ -164,7 +164,7 @@ var market = {
                         name: "20%",
                         value: 0.2
                     },
-                    amount: 1,
+                     
                 },
                 {
                     id: 567,
@@ -175,7 +175,7 @@ var market = {
                     onStock: 15,
                     discount: { name: "", value: 0 },
                     imgPath: ["images/Mlekara/gorgonzola1.jpg", "images/Mlekara/gorgonzola2.jpg", "images/Mlekara/gorgonzola3.jpg"],
-                    amount: 1,
+                     
                 }
             ]
         }, {
@@ -193,7 +193,7 @@ var market = {
                     onStock: 10,
                     discount: { name: "10%", value: 0.1 },
                     imgPath: ["images/Med/livadski.jpg", "images/Med/maslacak.jpg"],
-                    amount: 1,
+                     
                 }, {
                     id: 368,
                     name: "Med od lipe",
@@ -203,7 +203,7 @@ var market = {
                     onStock: 10,
                     discount: { name: "", value: 0 },
                     imgPath: ["images/Med/lipa.jpg"],
-                    amount: 1,
+                     
                 }, {
                     id: 369,
                     name: "Med od kestena",
@@ -216,7 +216,7 @@ var market = {
                         value: 0.1
                     },
                     imgPath: ["images/Med/kesten.jpg"],
-                    amount: 1,
+                     
                 }, {
                     id: 370,
                     name: "Med od borovih iglica",
@@ -226,7 +226,7 @@ var market = {
                     onStock: 10,
                     discount: { name: "", value: 0 },
                     imgPath: ["images/Med/borIglice.jpg"],
-                    amount: 1,
+                     
                 }, {
                     id: 371,
                     name: "Med od bagrema",
@@ -239,7 +239,7 @@ var market = {
                         value: 0.1
                     },
                     imgPath: ["images/Med/bagrem.jpg"],
-                    amount: 1,
+                     
                 },
 
 
@@ -252,7 +252,7 @@ var market = {
                     onStock: 10,
                     discount: { name: "", value: 0 },
                     imgPath: ["images/Med/maslacak.jpg"],
-                    amount: 1,
+                     
                 }
             ]
         }, {
@@ -270,7 +270,7 @@ var market = {
                 onStock: 15,
                 discount: { name: "", value: 0 },
                 imgPath: ["images/Mesara/cvarci.jpg"],
-                amount: 1,
+                 
             }, {
 
                 id: 207,
@@ -281,7 +281,7 @@ var market = {
                 onStock: 15,
                 discount: { name: "", value: 0 },
                 imgPath: ["images/Mesara/paprikacvarci.jpeg"],
-                amount: 1,
+                 
             },
             {
                 id: 205,
@@ -292,7 +292,7 @@ var market = {
                 onStock: 15,
                 discount: { name: "", value: 0 },
                 imgPath: ["images/Mesara/slanina.jpg"],
-                amount: 1,
+                 
             }, {
                 id: 209,
                 name: "Sušena govedina",
@@ -305,7 +305,7 @@ var market = {
                     value: 0.2
                 },
                 imgPath: ["images/Mesara/susenaGovedina.jpg"],
-                amount: 1,
+                 
             }, {
                 id: 309,
                 name: "Svinjske kocke",
@@ -318,7 +318,7 @@ var market = {
                     value: 0.3
                 },
                 imgPath: ["images/Mesara/prasetinaKocke.jpg"],
-                amount: 1,
+                 
 
             }, {
                 id: 319,
@@ -329,7 +329,7 @@ var market = {
                 onStock: 15,
                 discount: { name: "", value: 0 },
                 imgPath: ["images/Mesara/cevapi.jpg"],
-                amount: 1,
+                 
 
             }
 
