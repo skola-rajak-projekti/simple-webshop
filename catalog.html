@@ -101,11 +101,9 @@
                     <div class="row row-centered" id="bestbuy"></div>
                 </div>                
 
-                <h5 class="my-4 blockquote ">Kategorije proizvoda</h5>
+                <h1 class="my-4 ">Категорија производа</h1>
                 <div class="list-group" id="categories"> </div>
 
-                <h5 class="my-4 blockquote">Proizvodi na popustu</h5>
-                <div class="list-group" id="discounts"></div>
             </div>
 
             
@@ -139,15 +137,16 @@
                     <div class="modal-body">
                         <input type="hidden" id="item-id">
                         <div class="form-group">
-                            <label for="message-text" class="col-form-label">Unesite koliko proizvoda želite.</label>
+                            <label for="message-text" class="col-form-label">Колико жељену количину</label>
                             <input type="text" class="form-control" id="item-amount">
                             <small id="passwordHelpInline" class="text-muted">
-                                Količina je izražena u kilogramima.
+                               Количина ја изражена у килограмима. За вредности мање од 1, децималан запис одвојите
+                               тачкама
                             </small>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Одустани</button>
                         <input type="submit" class="btn btn-primary" value="Zavrsi">
                     </div>
                 </form>
@@ -167,8 +166,9 @@
         $('#orderAmountModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget);
             var id = button.data('item');
+            var item = findItemById(id);
             var modal = $(this);
-            modal.find('.modal-title').text('Kolicina');
+            modal.find('.modal-title').text(item.name);
             modal.find('.modal-body #item-id').val(id);
 
         });
@@ -176,7 +176,6 @@
             var button = $(event.relatedTarget);
             var id = button.data('item-id');
             
-            var item = findItemById(id);
 
             var modal = $(this);
             modal.find('.modal-title').text("Detalji artikla");

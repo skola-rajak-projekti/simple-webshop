@@ -93,11 +93,8 @@ function saveRecipient() {
         orders = [order];
     else
         orders.push(order);
-
-   // window.localStorage.setItem("my-orders", JSON.stringify(orders));
     
-    //window.localStorage.removeItem("my-kart");
-    //window.location.href  = "orders.html";
+    window.localStorage.setItem("my-orders", JSON.stringify(orders))
     setTimeout(function () {
         $('#exampleModal').modal('hide')
     }, 100);
@@ -105,9 +102,10 @@ function saveRecipient() {
     
 
 }
+
 $('#exampleModal').on('hidden.bs.modal', function (e) {
     
-    $('#table').addClass('collapse');
+    $('#table').addClass('little-bit-gray');
   })
 
 
