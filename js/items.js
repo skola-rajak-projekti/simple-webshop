@@ -32,8 +32,8 @@ function printItemCard(item) {
 
     temp = document.getElementById('item-cards');
 
-    temp.innerHTML +=  "<div class='card col-3'>"+
-    "<img  src=" + item.imgPath[0] + " height = '180px' class='cover'>"+
+    temp.innerHTML +=  "<div class='col-4 my-2'><div class='card'>"+
+    "<img  src=" + item.imgPath[0] + " height = '220px' class='cover '>"+
     "<div class='card-body'>"+
     " <h3 class='card-title'>" + item.name  +"</h3>"+
     "<h6 class='card-subtitle mb-2 text-muted'>"  + item.price + " " + item.unit +"</h6>"+ 
@@ -42,7 +42,7 @@ function printItemCard(item) {
     "<div class='card-footer'>"+orderButton+
     "</div>"+   
      
-    "</div>";
+    "</div></div>";
 
     /*temp.innerHTML += "<div class='col-lg-4 col-md-6 mb-4 '>" +
         "<div class='card h-100'> " +

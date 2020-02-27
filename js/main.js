@@ -153,7 +153,74 @@ var market = {
             details: "Конзумирање млечних производа на много начина доприноси здрављу - а најважније је да људи, који током живота уносе много млечних производа, манје пате од смањења коштане масе и густине костију, а самим тиме и од остеропотозе и других болести коштаног система." ,
             items: [
                 {
-                    id: 345,
+                    id: 344,
+                    name: "Млечни сир",
+                    desc: "Домаћи млечни сир",
+                    price: 340,
+                    unit: "дин/кг",
+                    imgPath: ["images/Mlekara/sitan-sir.jpeg"],
+                    onStock: 15,
+                    discount: {
+                        name: "",
+                        value: 0
+                    },
+                     
+                },   {
+                    id: 342,
+                    name: "Ситан пуномасни сир",
+                    desc: "Домаћи млечни сир",
+                    price: 270,
+                    unit: "дин/кг",
+                    imgPath: ["images/Mlekara/sir.png"],
+                    onStock: 15,
+                    discount: {
+                        name: "",
+                        value: 0
+                    },
+                     
+                },  {
+                    id: 341,
+                    name: "Ситан пуномасни сир",
+                    desc: "Домаћи млечни сир",
+                    price: 270,
+                    unit: "дин/кг",
+                    imgPath: ["images/Mlekara/sir.jpg"],
+                    onStock: 15,
+                    discount: {
+                        name: "",
+                        value: 0
+                    },
+                     
+                }, 
+                {
+                    id: 340,
+                    name: "Ситан пуномасни сир",
+                    desc: "Домаћи млечни сир",
+                    price: 270,
+                    unit: "дин/кг",
+                    imgPath: ["images/Mlekara/mlecni-sir.jpg"],
+                    onStock: 15,
+                    discount: {
+                        name: "",
+                        value: 0
+                    },
+                     
+                }, 
+                {
+                    id: 338,
+                    name: "Ситан пуномасни сир",
+                    desc: "Домаћи млечни сир",
+                    price: 270,
+                    unit: "дин/кг",
+                    imgPath: ["images/Mlekara/trapist.jpg"],
+                    onStock: 15,
+                    discount: {
+                        name: "",
+                        value: 0
+                    },
+                     
+                },   {
+                    id: 337,
                     name: "Koziji sir",
                     desc: "Domaći koziji sir.",
                     price: 350,
@@ -166,6 +233,35 @@ var market = {
                     },
                      
                 },
+                {
+                    id: 339,
+                    name: "Ситан пуномасни сир",
+                    desc: "Домаћи млечни сир",
+                    price: 270,
+                    unit: "дин/кг",
+                    imgPath: ["images/Mlekara/gorgonzola2.jpg"],
+                    onStock: 15,
+                    discount: {
+                        name: "",
+                        value: 0
+                    },
+                     
+                }, 
+                {
+                    id: 330,
+                    name: "Ситан пуномасни сир",
+                    desc: "Домаћи млечни сир",
+                    price: 270,
+                    unit: "дин/кг",
+                    imgPath: ["images/Mlekara/gorgonzola3.jpg"],
+                    onStock: 15,
+                    discount: {
+                        name: "",
+                        value: 0
+                    },
+                     
+                }, 
+               
                 {
                     id: 567,
                     name: "Gorgonzola",
@@ -339,6 +435,7 @@ var market = {
 };
 
 function populateData(){
+    window.localStorage.clear();
     if (window.localStorage.getItem('market') === null)
         window.localStorage.setItem('market', JSON.stringify(market));
     if (window.localStorage.getItem('actions') === null)
@@ -350,5 +447,6 @@ function populateData(){
 // items
 window.onload = function () {
 
+   
    this.populateData()
 };

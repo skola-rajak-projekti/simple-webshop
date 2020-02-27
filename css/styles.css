@@ -13,6 +13,7 @@
 .cover {
     
     object-fit : cover;/*scale-down;*/
+    
 }
 .payment-cards{
     height: 50px;
