@@ -37,9 +37,7 @@
           <li class="nav-item">
             <a class="nav-link active" href="kart.html">Корпа</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">О нама</a>
-          </li>
+          
         </ul>
       </div>
     </div>
@@ -51,7 +49,7 @@
     <!-- Jumbotron Header -->
 
     <h1 class="text-center display-3 my-5">Поручени производи</h1>
-    <p class="lead" style="height: 50px"> </p>
+    
 
     <!-- Page Features -->
     <div class="row text-center card" id="table">
@@ -66,7 +64,7 @@
       <div class="row" id="kart-header" style="display:none">
         <div class="col-3 offset-8">
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Zavrsi kupovinu
+            Заврши куповину
           </button>
         </div>
       </div>      
@@ -118,7 +116,7 @@
               <div class="mb-3">
                 <label for="address">Улица и број</label>
                 <input type="text" class="form-control" id="street" placeholder="Радничка 52, стан 2"
-                  name="street required">
+                  name="street">
                 <div class="invalid-feedback">
 
                 </div>
@@ -134,16 +132,12 @@
                     <option value="KG">Крагујевац</option>
                     <option value="SB">Суботица</option>
                   </select>
-                  <div class="invalid-feedback">
-                    Please provide a valid state.
-                  </div>
+                  
                 </div>
                 <div class="col-md-3 mb-3">
-                  <label for="zip">Zip</label>
+                  <label for="zip">Зип</label>
                   <input type="text" class="form-control" id="zip" name="zip">
-                  <div class="invalid-feedback">
-                    Zip code required.
-                  </div>
+                 
                 </div>
               </div>
 
@@ -152,12 +146,12 @@
               <div class="d-block my-3">
                 <div class="custom-control custom-radio">
                   <input id="direct" name="paymentMethod" type="radio" class="custom-control-input" value="direct"
-                    onclick="hideCard()" checked="" required="">
+                    onclick="hideCard()" checked="" >
                   <label class="custom-control-label" for="direct">По узећем</label>
                 </div>
                 <div class="custom-control custom-radio">
                   <input id="card" name="paymentMethod" type="radio" class="custom-control-input" value="none"
-                    onclick="showCard()" required="">
+                    onclick="showCard()">
                   <label class="custom-control-label" for="card">Кредитним картицама</label>
                 </div>
 
@@ -191,7 +185,7 @@
                   </div>
                   <div class="col-md-3 mb-3">
                     <label for="cc-expiration">ЦВВ</label>
-                    <input type="text" class="form-control" id="CCV" name="cardCCV">
+                    <input type="text" class="form-control" id="CCV" name="cardCCV" >
                     <div class="invalid-feedback">
                       Безбедносни код је обавезан
                     </div>

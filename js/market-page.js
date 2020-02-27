@@ -25,8 +25,7 @@ function start() {
 function printCategory(category) {
     if(category.name != null){
         temp = document.getElementById('categories');
-        temp.innerHTML += "<h2> " + category.name +" </h2>";
-        temp.innerHTML += "<a href= 'category.html?type=" + category.urlName  +"'><img height='300px'  src='" + category.images[0] + "'></a>";
+        temp.innerHTML += "<a href= 'category.html?type=" + category.urlName  +"'><img height='450px'  src='" + category.images[0] + "'></a>";
     }
 }
 function printBestBuyitems() {

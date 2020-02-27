@@ -24,6 +24,10 @@
         margin-bottom: 0;
     
 }
+
+.little-bit-gray{
+    background-color: gray;
+}
 .col-6a {
     background-color: whitesmoke;
 }
